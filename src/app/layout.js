@@ -1,10 +1,11 @@
 /** @format */
 import localFont from 'next/font/local';
 import './globals.css';
-import Navbar from './components/navbar';
+import Navbar from './components/navbar/navbar';
 import AnimatedCursor from 'react-animated-cursor';
-import SmoothScrollerWrapper from './components/animations/smoothscrollwrapper';
+import { SmoothScrollProvider } from './components/animations/smoothscrollwrapper';
 import Footer from './components/footer';
+import Preloader from './preloader';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -40,12 +41,12 @@ export default function RootLayout({ children }) {
           outerStyle={{
             border: '3px solid #ffde16',
           }}
-        />
-        <SmoothScrollerWrapper>
+        />{' '}
+        <SmoothScrollProvider>
           <Navbar />
           {children}
           <Footer />
-        </SmoothScrollerWrapper>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

@@ -13,7 +13,7 @@ const Rotate = ({ children }) => {
     gsap
       .fromTo(
         ref.current,
-        { scale: 0.7, rotationX: 90, y: 10 },
+        { scale: 0.7, rotationX: 90, y: 10, perspective: 1000 },
         {
           scale: 1,
           rotationX: 0,

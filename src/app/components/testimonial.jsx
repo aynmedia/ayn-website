@@ -43,9 +43,8 @@ const Testimonials = () => {
       </h1>
       <Swiper
         ref={swiperRef}
-        slidesPerView={3}
-        spaceBetween={30}
-        slidesPerGroup={3}
+        // slidesPerView={3}
+        // spaceBetween={30}
         loop={true}
         loopFillGroupWithBlank={true}
         onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex + 1)}

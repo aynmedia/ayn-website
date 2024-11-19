@@ -4,49 +4,46 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedParagraph = ({ text }) => {
-  const paragraphRef = useRef(null);
+const AnimatedParagraph = ({ children }) => {
+  const ref = useRef(null);
 
   useEffect(() => {
-    // Find each span (each word in this case) within the paragraph
-    const words = gsap.utils.toArray(paragraphRef.current.children);
-
-    words.forEach((word, index) => {
-      gsap.fromTo(
-        word,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          delay: index * 0.05, // Stagger effect for each word
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: word,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: true,
-          },
-        }
-      );
+    const split = new SplitType('.line-animation', {
+      type: 'lines,words',
     });
-  }, [text]);
+    gsap.fromTo(
+      split.lines,
+      {
+        scale: 0.7,
+        rotationX: 90,
+        y: 10,
+        perspective: 1000,
+        opacity: 1,
+      },
+      {
+        scale: 1,
+        rotationX: 0,
+        y: -10,
+        opacity: 1,
+        duration: 1,
+        delay: 0,
+        ease: 'easeInOut',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ref.current,
+          start: 'top 90%',
+          end: 'bottom 90%',
+          scrub: true,
+        },
+      }
+    );
+  }, []);
 
-  // Wrap each word in a span for animation
-  const words = text.split(' ').map((word, index) => (
-    <span key={index} className='animated-word'>
-      {word}&nbsp;
-    </span>
-  ));
-
-  return (
-    <p ref={paragraphRef} className='animated-paragraph '>
-      {words}
-    </p>
-  );
+  return <div ref={ref}>{children}</div>;
 };
 
 export default AnimatedParagraph;

@@ -28,7 +28,7 @@ const Hero = () => {
     <>
       <div className='min-h-screen w-full bg-secondary flex flex-col  text-white '>
         <div className='max-w-7xl md:mx-auto px-4 flex flex-row justify-between items-center w-full'>
-          <div className='w-3/4 text-[6rem] md:text-[15rem] font-bold uppercase text-primary font animate-letters'>
+          <div className='w-3/4 text-[5rem] md:text-[15rem] font-bold uppercase text-primary font animate-letters -z-1'>
             {'every'.split('').map((letter, index) => (
               <span key={index} className='letters inline-block'>
                 {letter === ' ' ? '' : letter}

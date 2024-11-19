@@ -14,14 +14,16 @@ const ServicesHome = () => {
   const [isHoveredRight, setIsHoveredRight] = useState(false);
 
   return (
-    <div className='pb-24 pt-12'>
+    <div className='pb-24'>
       <div className='flex md:flex-row flex-col gap-6 max-w-7xl md:mx-auto mx-4'>
         <div className='md:w-1/2 w-full'>
-          <span className='text-lg font-bold text-gray-500'>Services</span>
+          <span className='text-lg font-bold text-gray-500 text-center'>
+            Services
+          </span>
           <h1 className='text-4xl font-bold'>What Can We Achieve Together</h1>
         </div>
         <div className='md:w-1/2 w-full flex justify-end'>
-          <span className='text-lg font-bold text-gray-500 text-right'>
+          <span className='text-lg font-bold text-gray-500 text-center md:text-right'>
             Patterns, innovations, and strategies
             <br /> are always shifting, and so are we.
           </span>
@@ -45,7 +47,7 @@ const ServicesHome = () => {
               </ul>
             </div>
           ) : (
-            <div className='bg-primary p-12 text-secondary h-96'>
+            <div className='bg-primary p-12 text-secondary md:h-96'>
               <h1
                 className={`${londrinaOutline.className} text-7xl my-6 font-bold`}>
                 BRAND SOLUTIONS
@@ -80,7 +82,7 @@ const ServicesHome = () => {
               </ul>
             </div>
           ) : (
-            <div className='bg-primary p-12 text-secondary h-96'>
+            <div className='bg-primary p-12 text-secondary md:h-96'>
               <h1
                 className={`${londrinaOutline.className} text-7xl my-6 font-bold`}>
                 DIGITAL SOLUTIONS

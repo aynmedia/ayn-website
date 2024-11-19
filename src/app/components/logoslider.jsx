@@ -11,16 +11,12 @@ import Rotate from './animations/rotateAnimation';
 
 const LogoSlider = () => {
   return (
-    <div className='my-12 flex flex-col items-center gap-6'>
-      <Rotate>
-        <h1 className='md:text-4xl text-2xl font-bold'>Our Clients</h1>
-      </Rotate>{' '}
-      <Rotate>
-        <span className='pb-12 text-xl md:text-center text-gray-600 px-4'>
-          We don&apos;t play favorites, We excel at keeping all our clients
-          happy, all at once.
-        </span>{' '}
-      </Rotate>
+    <div className='my-12 flex flex-col items-center gap-6 overflow-hidden'>
+      <h1 className='md:text-4xl text-2xl font-bold mt-12'>Our Clients</h1>
+      <span className='pb-12 text-xl text-center text-gray-600 px-4 '>
+        We don&apos;t play favorites, We excel at keeping all our clients happy,
+        all at once.
+      </span>{' '}
       <Marquee gradient>
         {logoImages.map((logo) => (
           <Image
@@ -36,7 +32,7 @@ const LogoSlider = () => {
       <div className='flex justify-center my-12'>
         <Button
           variant='primary'
-          className='px-6 py-6 text-sm text-secondary font-bold bg-primary focus:ring-4 focus:outline-none focus:ring-primary hover:bg-secondary hover:text-primary'>
+          className='px-6 py-6 text-xl text-secondary font-bold bg-primary focus:ring-4 focus:outline-none focus:ring-primary hover:bg-secondary hover:text-primary'>
           View All <FaArrowRightLong />
         </Button>
       </div>
