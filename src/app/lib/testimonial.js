@@ -1,6 +1,6 @@
 /** @format */
 import Parambaryam from '@/../../public/images/clientlogos/parambaryam copy.png';
-import GLCars from '@/../../public/images/clientlogos/GLCars.png';
+import GLCars from '@/../../public/images/clientlogos/GlCars.png';
 import PYD from '@/../../public/images/clientlogos/Plan_Your_Destinations-removebg-preview.png';
 import BN from '@/../../public/images/clientlogos/BN Constructions.png';
 import Rukmani from '@/../../public/images/clientlogos/rukmani.png';
