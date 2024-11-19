@@ -28,22 +28,22 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <AnimatedCursor
-          innerSize={8}
-          outerSize={35}
-          innerScale={1}
-          outerScale={2}
-          outerAlpha={0}
-          hasBlendMode={true}
-          innerStyle={{
-            backgroundColor: '#ffde16',
-          }}
-          outerStyle={{
-            border: '3px solid #ffde16',
-          }}
-        />{' '}
         <SmoothScrollProvider>
           <Navbar />
+          <AnimatedCursor
+            innerSize={8}
+            outerSize={35}
+            innerScale={1}
+            outerScale={2}
+            outerAlpha={0}
+            hasBlendMode={true}
+            innerStyle={{
+              backgroundColor: '#ffde16',
+            }}
+            outerStyle={{
+              border: '3px solid #ffde16',
+            }}
+          />{' '}
           {children}
           <Footer />
         </SmoothScrollProvider>

@@ -41,7 +41,7 @@ const DesktopMenu = ({ menu }) => {
               }
               `}>
                   {menu.subMenu.map((item, index) => (
-                    <div key={index} className=''>
+                    <div key={index} className='cursor-pointer'>
                       <Link href={item.href}>{item.name}</Link>
                     </div>
                   ))}

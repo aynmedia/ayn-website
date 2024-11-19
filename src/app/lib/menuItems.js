@@ -41,26 +41,26 @@ export const menuItems = [
     href: '/about',
     subMenu: [
       {
-        name: 'Our Story',
-        href: '/about/story',
+        name: 'Who We Are',
+        href: '/about/whoweare',
       },
       {
-        name: 'Our Team',
-        href: '/about/team',
+        name: 'How We Work',
+        href: '/about/howwework',
       },
     ],
   },
   {
     name: 'Portfolio',
-    href: '/contact',
+    href: '/portfolio',
   },
   {
     name: 'Our Clients',
-    href: '/blog',
+    href: '/clients',
   },
   {
     name: 'Blogs',
-    href: '/blog',
+    href: '/blogs',
   },
   {
     name: 'Contact',
