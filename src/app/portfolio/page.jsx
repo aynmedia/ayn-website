@@ -15,12 +15,38 @@ const page = () => {
             className='w-full md:w-1/2 flex items-start
          '>
             <div className='sticky top-[15%]'>
-              <span className='text-xl text-gray-400 font-bold'>Sample</span>
-              <p className='text-7xl  font-bold'>Work</p>
-              <p className='w-full text-xl font-bold md:w-1/2 text-gray-800 mt-4'>
-                View some of our recent shortlisted and awesome work that we
-                created for our happy clients.
+              <span className='text-md text-gray-400 font-medium uppercase tracking-wider'>
+                Our Portfolio
+              </span>
+              <h1 className='text-7xl font-bold bg-secondary bg-clip-text text-transparent'>
+                Crafting Digital Excellence
+              </h1>
+              <p className='w-full text-md md:w-2/3 text-gray-800 mt-6 leading-relaxed'>
+                Discover our journey of transforming ideas into impactful
+                digital experiences. Each project represents our commitment to
+                innovation, creativity, and delivering exceptional results that
+                drive business growth.
               </p>
+              <div className='mt-8 flex gap-4'>
+                <div className='flex items-center gap-2'>
+                  <span className='text-4xl font-bold text-secondary'>
+                    150+
+                  </span>
+                  <span className='text-sm text-gray-600'>
+                    Projects
+                    <br />
+                    Completed
+                  </span>
+                </div>
+                <div className='flex items-center gap-2'>
+                  <span className='text-4xl font-bold text-secondary'>98%</span>
+                  <span className='text-sm text-gray-600'>
+                    Client
+                    <br />
+                    Satisfaction
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <div className='w-full md:w-1/2'>
@@ -43,17 +69,12 @@ const page = () => {
         <span className='text-4xl text-white font-bold text-center'>
           Ads That Perform
         </span>
-        <Marquee gradient={false} speed={50} pauseOnHover={true} gap={10}>
+        <Marquee gradient={false} speed={100} pauseOnHover={true} gap={10}>
           {workImages.map((image, index) => (
             <section
               key={index}
               className='flex items-center justify-center mr-4'>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-              />
+              <Image src={image.src} alt={image.alt} width={500} height={500} />
             </section>
           ))}
         </Marquee>
@@ -61,7 +82,7 @@ const page = () => {
       <div className='max-w-7xl md:mx-auto mx-4 my-12 '>
         <div className='flex flex-col md:flex-row justify-center'>
           <div className='w-full '>
-            <span className='text-4xl text-secondary font-bold text-center'>
+            <span className='text-4xl text-secondary font-bold flex justify-center'>
               Web Development
             </span>
             {webdesignsample.map((website, index) => (
@@ -78,7 +99,7 @@ const page = () => {
                   <h1 className='text-4xl text-gray-800 font-bold'>
                     {website.title}
                   </h1>
-                  <p className='text-lg text-gray-800 font-medium'>
+                  <p className='text-md text-gray-800 font-medium'>
                     {website.description}
                   </p>
                   <button className='bg-secondary text-white text-xl font-bold py-3 px-6 rounded-lg w-fit'>

@@ -19,7 +19,9 @@ const DesktopMenu = ({ menu }) => {
         className='flex items-center gap-1 cursor-pointer px-3 py-1 rounded-xl group font-bold text-lg hover:text-black text-black/80'
         onMouseEnter={toggleHoverMenu}
         onMouseLeave={toggleHoverMenu}>
-        {menu.name}
+        <Link href={menu.href} className='text-md'>
+          {menu.name}
+        </Link>
         {hasSubMenu && (
           <FaChevronDown
             size={16}
@@ -42,7 +44,9 @@ const DesktopMenu = ({ menu }) => {
               `}>
                   {menu.subMenu.map((item, index) => (
                     <div key={index} className='cursor-pointer'>
-                      <Link href={item.href}>{item.name}</Link>
+                      <Link href={item.href} className='text-md'>
+                        {item.name}
+                      </Link>
                     </div>
                   ))}
                 </div>

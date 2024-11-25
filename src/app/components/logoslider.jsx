@@ -7,7 +7,6 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 
 import Marquee from 'react-fast-marquee';
 import { Button } from '@/components/ui/button';
-import Rotate from './animations/rotateAnimation';
 
 const LogoSlider = () => {
   return (

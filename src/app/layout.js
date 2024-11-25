@@ -29,7 +29,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SmoothScrollProvider>
-          <Navbar />
           <AnimatedCursor
             innerSize={8}
             outerSize={35}
@@ -37,6 +36,7 @@ export default function RootLayout({ children }) {
             outerScale={2}
             outerAlpha={0}
             hasBlendMode={true}
+            showSystemCursor
             innerStyle={{
               backgroundColor: '#ffde16',
             }}
@@ -44,6 +44,7 @@ export default function RootLayout({ children }) {
               border: '3px solid #ffde16',
             }}
           />{' '}
+          <Navbar />
           {children}
           <Footer />
         </SmoothScrollProvider>

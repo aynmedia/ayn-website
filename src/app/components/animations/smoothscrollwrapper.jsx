@@ -1,27 +1,6 @@
 /** @format */
 'use client';
-// import { useRef } from 'react';
-// import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 
-// export const SmoothScrollProvider = ({ children, options }) => {
-//   // const { scroll } = useLocomotiveScroll();
-//   const containerRef = useRef(null);
-
-//   return (
-//     <LocomotiveScrollProvider
-//       options={{
-//         smooth: true,
-
-//         // ... all available Locomotive Scroll instance options
-//       }}
-//       watch={[]}
-//       containerRef={containerRef}>
-//       <div data-scroll-container ref={containerRef}>
-//         {children}
-//       </div>
-//     </LocomotiveScrollProvider>
-//   );
-// };
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 
 export const SmoothScrollProvider = ({ children }) => {

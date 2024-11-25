@@ -32,7 +32,7 @@ const page = () => {
 
         <div className='flex flex-col md:flex-row items-center gap-4 my-12'>
           <Rotate>
-            <p className='text-xl font-medium'>
+            <p className='text-lg font-medium'>
               Over 3.5 billion people worldwide actively use social
               media—that&apos;s an immense pool of potential clients waiting to
               be reached. In today’s digital age, establishing a robust online

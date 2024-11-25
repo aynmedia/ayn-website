@@ -2,8 +2,12 @@
 
 export const menuItems = [
   {
+    name: 'Home',
+    href: '/',
+  },
+  {
     name: 'Services',
-    href: '/services',
+    href: '',
     subMenu: [
       {
         name: 'Social Media Marketing',
@@ -38,15 +42,15 @@ export const menuItems = [
   },
   {
     name: 'About',
-    href: '/about',
+    href: '',
     subMenu: [
       {
         name: 'Who We Are',
         href: '/about/whoweare',
       },
       {
-        name: 'How We Work',
-        href: '/about/howwework',
+        name: 'What We Do',
+        href: '/about/whatwedo',
       },
     ],
   },

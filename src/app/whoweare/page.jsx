@@ -22,11 +22,11 @@ const page = () => {
           </Rotate>
           <Rotate>
             <p className='text-lg font-medium'>
-              AYN Media & Technologies Pvt. Ltd., was founded in 2020 and has
-              quickly established itself as a leading Digital Marketing Agency
-              Our young and dynamic team offers full-service branding, digital
-              marketing, and ad film production, delivering results-driven
-              projects that help businesses thrive in the competitive digital
+              Founded in 2020, AYN Media & Technologies Pvt. Ltd. has rapidly
+              emerged as a trailblazer in the digital marketing space. Backed by
+              a young and dynamic team, we specialize in delivering full-service
+              branding, cutting-edge digital marketing, and ad film production
+              that empower businesses to thrive in today’s competitive digital
               landscape.
             </p>
           </Rotate>
@@ -35,13 +35,11 @@ const page = () => {
         <div className='flex flex-col md:flex-row items-center gap-4 my-12'>
           <Rotate>
             <p className='text-lg font-medium'>
-              As a creative brand builder and strategist, AYN Media &
-              Technologies empowers organizations to increase revenue by
-              generating more leads and driving business growth. We help brands
-              capitalize on opportunities to boost sales and expand their reach.
-              Our digital marketing services focus on crafting innovative
-              strategies, implementing cutting-edge technologies, and delivering
-              solutions that maximize business success and growth.
+              With a portfolio of 300+ clients across India and 21 international
+              brands spanning 5 countries, we bring unmatched expertise across
+              50+ industries. At Ayn Media, we craft bespoke, results-driven
+              strategies designed to elevate brand visibility, ignite customer
+              engagement, and drive measurable success.
             </p>
           </Rotate>
         </div>

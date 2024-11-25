@@ -32,8 +32,8 @@ module.exports = {
         destination: '/whoweare',
       },
       {
-        source: '/about/howwework',
-        destination: '/howwework',
+        source: '/about/whatwedo',
+        destination: '/whatwedo',
       },
     ];
   },
