@@ -1,7 +1,6 @@
 /** @format */
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import SmoothScrollerWrapper from './components/animations/smoothscrollwrapper';
 
 const Preloader = ({ children }) => {
   const [preloader, setPreloader] = useState(true);
@@ -30,7 +29,7 @@ const Preloader = ({ children }) => {
           <p className='text-white text-2xl font-bold'>Loading...</p>
         </div>
       ) : (
-        <SmoothScrollerWrapper>{children}</SmoothScrollerWrapper>
+        { children }
       )}
     </>
   );

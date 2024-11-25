@@ -36,8 +36,8 @@ const ContactHome = () => {
                     </h3>
                     <p className='text-slate-900'>
                       Get personalized insights and strategic guidance from our
-                      seasoned professionals who understand your industry's
-                      unique challenges.
+                      seasoned professionals who understand your
+                      industry`&apos;`s unique challenges.
                     </p>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ const ContactHome = () => {
                   Let&apos;s Discuss Your Project
                 </h2>
                 <p className='text-slate-900 mt-2'>
-                  Fill out the form below, and we'll get back to you with
+                  Fill out the form below, and we`&apos;`ll get back to you with
                   insights tailored to your needs.
                 </p>
               </div>

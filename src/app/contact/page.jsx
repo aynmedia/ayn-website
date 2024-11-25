@@ -107,7 +107,7 @@ const ContactPage = () => {
             Leverage Your Business with Google Ads
           </h1>
           <p className='text-lg font-medium'>
-            Let's elevate your business game with Ayn Media.
+            Let`&apos;`s elevate your business game with Ayn Media.
           </p>
         </div>
       </div>
