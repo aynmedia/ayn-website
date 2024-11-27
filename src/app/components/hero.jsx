@@ -1,133 +1,176 @@
 /** @format */
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useEffect, useRef } from 'react';
+import { FaArrowRightLong } from 'react-icons/fa6';
+import { FaChartLine } from 'react-icons/fa6';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-// /** @format */
-// 'use client';
-// import gsap from 'gsap';
-// import Image from 'next/image';
-// import React, { useEffect } from 'react';
-// import { FaCirclePlay } from 'react-icons/fa6';
-
-// const Hero = () => {
-//   useEffect(() => {
-//     const text = document.querySelectorAll('.animate-letters .letters');
-
-//     gsap.fromTo(
-//       text,
-//       {
-//         x: 50,
-//         opacity: 0,
-//       },
-//       {
-//         x: 0,
-//         opacity: 1,
-//         ease: 'power2.inOut',
-//         stagger: 0.1,
-//         duration: 2,
-//       }
-//     );
-//   }, []);
-//   return (
-//     <>
-//       <div className='min-h-screen w-full bg-secondary flex flex-col  text-white '>
-//         <div className='max-w-7xl md:mx-auto px-4 flex flex-row justify-between items-center w-full'>
-//           <div className='w-3/4 text-[5rem] md:text-[15rem] font-bold uppercase text-primary font animate-letters -z-1'>
-//             {'every'.split('').map((letter, index) => (
-//               <span key={index} className='letters inline-block'>
-//                 {letter === ' ' ? '' : letter}
-//               </span>
-//             ))}
-//           </div>
-//           <div className='w-1/4'>
-//             <div className='flex justify-center items-center'>
-//               <div className='group w-6 h-6 md:w-48 md:h-48 rounded-full border border-white flex justify-center items-center hover:bg-white'>
-//                 <button className='text-white'>
-//                   <FaCirclePlay
-//                     size={48}
-//                     className='group-hover:text-primary'
-//                   />
-//                 </button>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//         <div className='max-w-7xl md:mx-auto px-4 flex flex-col md:flex-row justify-between w-full'>
-//           <div className='text-[6.4rem] md:text-[15rem] font-bold uppercase font animate-letters w-full sm:w-3/4'>
-//             {'where'.split('').map((letter, index) => (
-//               <span key={index} className='letters inline-block'>
-//                 {letter === ' ' ? '' : letter}
-//               </span>
-//             ))}
-//           </div>
-//           <div className='flex flex-col md:w-1/4 md:order-first px-4'>
-//             <div className='text-sm font-bold underline md:text-base'>
-//               Best Digital Marketing Agency in Chennai: Innovative Digital
-//               Marketing Innovative
-//             </div>
-//             <span className='text-sm py-3 flex-wrap'>
-//               Digital Marketing refers to the use of creative and cutting-edge
-//               strategies to promote products or services online. As the Best
-//               Digital marketing agency in Chennai, we excel at utilizing various
-//               digital channels such as social media, email marketing, SEO, and
-//               content marketing. Our approach involves continuously exploring
-//               new ideas and technologies to engage with customers and help
-//               businesses stand out from competitors in the ever-evolving digital
-//               landscape. With our expertise, we ensure your brand reaches the
-//               right audience and achieves measurable success.
-//             </span>
-//           </div>
-//         </div>
-//         <div className='flex flex-row justify-between items-center w-full'>
-//           <div className='md:w-1/3 w-full flex justify-center items-center'>
-//             <div class='mouse_scroll'>
-//               <div class='mouse'>
-//                 <div class='wheel'></div>
-//               </div>
-//               <div>
-//                 <span class='m_scroll_arrows unu'></span>
-//                 <span class='m_scroll_arrows doi'></span>
-//                 <span class='m_scroll_arrows trei'></span>
-//               </div>
-//             </div>
-//           </div>
-//           <div className='md:w-2/3 w-full h-80 overflow-hidden'>
-//             <Image
-//               src='/images/Hero_Section_DG.webp'
-//               alt='hero-image'
-//               objectFit='cover'
-//               layout='responsive'
-//               width={400}
-//               height={100}
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Hero;
-
-import React from 'react';
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  // Create refs for animating elements
+  const headingRef = useRef(null);
+  const paragraphRef = useRef(null);
+  const ctaContainerRef = useRef(null);
+  const imageRef = useRef(null);
+  const statsRef = useRef(null);
+  const whyUsRef = useRef(null);
+
+  useEffect(() => {
+    // Timeline for initial load animations
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    // Initial load animations
+    tl.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    )
+      .fromTo(
+        paragraphRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1 },
+        '-=0.7'
+      )
+      .fromTo(
+        ctaContainerRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1 },
+        '-=0.7'
+      );
+
+    // Scroll-triggered animations
+    gsap.fromTo(
+      imageRef.current,
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+
+    gsap.fromTo(
+      statsRef.current,
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+
+    gsap.fromTo(
+      whyUsRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: whyUsRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+
+    // Cleanup function
+    return () => {
+      tl.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
   return (
-    <section className='py-24 bg-secondary text-white'>
-      <div className='mx-auto max-w-7xl px-4 flex flex-col items-center justify-center'>
-        <div className='flex flex-col justify-center items-center'>
-          <div className='inline-flex py-1 px-3 bg-gradient-to-r from-primary to-yellow-200 rounded-full text-white font-semibold w-fit'>
-            ✨ lorem ipsum
-          </div>
-          <h1 className='text-6xl font-medium text-center mt-6'>
-            lorem ipsum lorem ipsum lorem ipsum
+    <section className='py-24 text-secondary'>
+      <div className='mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-center gap-5'>
+        <div className='flex flex-col w-full md:w-1/2 items-center'>
+          <h1 ref={headingRef} className='text-6xl font-medium opacity-0'>
+            Stay ahead of the game with our innovative approach.
           </h1>
-          <p>
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
-            ipsum lorem ipsum lorem ipsum
+          <p
+            ref={paragraphRef}
+            className='mt-4 text-xl leading-relaxed text-gray-500 opacity-0'>
+            Driven by innovation, we ensure you stay ahead. Experience
+            forward-thinking solutions for lasting success
           </p>
+          <div
+            ref={ctaContainerRef}
+            className='flex justify-start items-center gap-12 w-full mt-8 opacity-0'>
+            <button className='bg-primary hover:bg-yellow-500 text-secondary font-bold py-4 px-8 rounded-full flex'>
+              Schedule a Call
+              <FaArrowRightLong size={24} className='ml-4' />
+            </button>
+            <Link className='underline hover:text-primary' href='/portfolio'>
+              Explore our works
+            </Link>
+          </div>
+        </div>
+        <div className='flex flex-col w-full md:w-1/2 items-center gap-4 md:my-0 my-12'>
+          <div className='flex flex-row w-full gap-4'>
+            <div className='w-3/5 rounded-3xl flex flex-col'>
+              <div
+                ref={imageRef}
+                className='relative overflow-hidden rounded-tl-[300px] w-full h-full opacity-0'>
+                <Image
+                  src='/images/Hero_Section_DG.webp'
+                  alt='Laptop Image'
+                  className='w-full h-full object-fit rounded-3xl'
+                  width={600}
+                  height={1400}
+                />
+
+                <div className='absolute top-4 right-4 bg-secondary text-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg'>
+                  <FaChartLine size={24} />
+                </div>
+              </div>
+            </div>
+            <div
+              ref={statsRef}
+              className='w-2/5 bg-gray-500/10 rounded-3xl p-8 gap-5 flex flex-col opacity-0'>
+              <h1 className='text-6xl font-bold text-center'>120+ </h1>
+              <p className='text-gray-500'>
+                Business loves to work with us, and they trust us to deliver
+                results.
+              </p>
+              <div className='w-full bg-gray-400 h-1.5 dark:bg-gray-700'>
+                <div className='bg-primary h-1.5 w-3/4'></div>
+              </div>
+            </div>
+          </div>
+          <div
+            ref={whyUsRef}
+            className='relative w-full h-64 bg-secondary rounded-3xl p-8 text-white opacity-0'>
+            <div className='relative z-10'>
+              <p className='text-sm uppercase tracking-wide text-gray-400 mb-1'>
+                Why us?
+              </p>
+              <h2 className='text-4xl font-semibold'>
+                Drive more traffic <br /> and product sales
+              </h2>
+            </div>
+
+            <div className='absolute bottom-4 right-6 flex items-end space-x-4 z-10'>
+              <div className='bg-primary w-16 h-16 rounded'></div>
+              <div className='bg-primary w-16 h-32 rounded'></div>
+              <div className='bg-primary w-16 h-48 rounded'></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
