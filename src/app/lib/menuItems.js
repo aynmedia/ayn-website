@@ -37,6 +37,14 @@ export const menuItems = [
         name: 'SEO',
         href: '/services/seo',
       },
+      {
+        name: 'LinkedIn Marketing',
+        href: '/services/linkedin',
+      },
+      {
+        name: 'Influencer Marketing',
+        href: '/services/influencer',
+      },
     ],
     gridCols: 3,
   },

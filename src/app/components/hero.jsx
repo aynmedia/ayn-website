@@ -98,7 +98,7 @@ const Hero = () => {
 
   return (
     <section className='py-24 text-secondary'>
-      <div className='mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-center gap-5'>
+      <div className='mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-start gap-5'>
         <div className='flex flex-col w-full md:w-1/2 items-center'>
           <h1 ref={headingRef} className='text-6xl font-medium opacity-0'>
             Stay ahead of the game with our innovative approach.
@@ -112,13 +112,20 @@ const Hero = () => {
           <div
             ref={ctaContainerRef}
             className='flex justify-start items-center gap-12 w-full mt-8 opacity-0'>
-            <button className='bg-primary hover:bg-yellow-500 text-secondary font-bold py-4 px-8 rounded-full flex'>
+            <button className='bg-primary hover:bg-yellow-400 text-secondary font-bold py-4 px-8 rounded-full flex'>
               Schedule a Call
               <FaArrowRightLong size={24} className='ml-4' />
             </button>
-            <Link className='underline hover:text-primary' href='/portfolio'>
+            <Link
+              className='underline hover:text-primary font-bold'
+              href='/portfolio'>
               Explore our works
             </Link>
+          </div>
+          <div className='flex justify-start w-full my-10'>
+            <h1 className='text-md text-gray-400 font-medium'>
+              Average response time: Less than 24 hours
+            </h1>
           </div>
         </div>
         <div className='flex flex-col w-full md:w-1/2 items-center gap-4 md:my-0 my-12'>

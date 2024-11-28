@@ -16,10 +16,10 @@ const DesktopMenu = ({ menu }) => {
   return (
     <li>
       <span
-        className='flex items-center gap-1 cursor-pointer px-3 py-1 rounded-xl group font-bold text-lg hover:text-black text-black/80'
+        className='flex items-center gap-1 cursor-pointer px-3 py-1 rounded-xl group font-bold  text-black/80 text-md'
         onMouseEnter={toggleHoverMenu}
         onMouseLeave={toggleHoverMenu}>
-        <Link href={menu.href} className='text-md'>
+        <Link href={menu.href} className='hover:text-primary'>
           {menu.name}
         </Link>
         {hasSubMenu && (
@@ -43,8 +43,8 @@ const DesktopMenu = ({ menu }) => {
               }
               `}>
                   {menu.subMenu.map((item, index) => (
-                    <div key={index} className='cursor-pointer'>
-                      <Link href={item.href} className='text-md'>
+                    <div key={index} className='cursor-pointer text-md'>
+                      <Link href={item.href} className='hover:text-primary'>
                         {item.name}
                       </Link>
                     </div>

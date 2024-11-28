@@ -16,7 +16,7 @@ const LogoSlider = () => {
         We don&apos;t play favorites, We excel at keeping all our clients happy,
         all at once.
       </span>{' '}
-      <Marquee gradient>
+      <Marquee gradient speed={50}>
         {logoImages.map((logo) => (
           <Image
             key={logo.id}
@@ -24,7 +24,19 @@ const LogoSlider = () => {
             alt={logo.alt}
             width={200}
             height={200}
-            className='grayscale hover:grayscale-0 transition-all duration-500 ease-in-out'
+            // className='grayscale hover:grayscale-0 transition-all duration-500 ease-in-out'
+          />
+        ))}
+      </Marquee>
+      <Marquee gradient direction='right' speed={50}>
+        {logoImages.map((logo) => (
+          <Image
+            key={logo.id}
+            src={logo.src}
+            alt={logo.alt}
+            width={200}
+            height={200}
+            // className='grayscale hover:grayscale-0 transition-all duration-500 ease-in-out'
           />
         ))}
       </Marquee>
