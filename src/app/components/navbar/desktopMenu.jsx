@@ -19,7 +19,7 @@ const DesktopMenu = ({ menu }) => {
         className='flex items-center gap-1 cursor-pointer px-3 py-1 rounded-xl group font-bold  text-black/80 text-md'
         onMouseEnter={toggleHoverMenu}
         onMouseLeave={toggleHoverMenu}>
-        <Link href={menu.href} className='hover:text-primary'>
+        <Link href={menu.href} className='hover:text-white'>
           {menu.name}
         </Link>
         {hasSubMenu && (

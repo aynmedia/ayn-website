@@ -60,6 +60,10 @@ export const menuItems = [
         name: 'What We Do',
         href: '/about/whatwedo',
       },
+      {
+        name: 'How We Work',
+        href: '/about/howwework',
+      },
     ],
   },
   {

@@ -36,6 +36,10 @@ module.exports = {
         destination: '/whatwedo',
       },
       {
+        source: '/about/howwework',
+        destination: '/howwework',
+      },
+      {
         source: '/services/linkedin',
         destination: '/linkedin',
       },

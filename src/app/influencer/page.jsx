@@ -14,7 +14,7 @@ import { PiStrategyDuotone } from 'react-icons/pi';
 import { FaRegIdBadge } from 'react-icons/fa';
 import Image from 'next/image';
 import socialMedia from '@/../../public/images/services/socialmarketing.svg';
-import fbinsta from '@/../../public/images/services/fbinsta.svg';
+import influencer from '@/../../public/images/services/influencer.jpg';
 import heroImage from '@/../../public/images/services/header.jpg';
 
 // Register GSAP plugins
@@ -343,7 +343,7 @@ const InfluencerMarketingPage = () => {
             <div className='md:w-2/4 w-full'>
               <Image
                 id='special-features-image'
-                src={fbinsta}
+                src={influencer}
                 alt='social'
                 width={1000}
                 height={1000}

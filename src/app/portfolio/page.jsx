@@ -8,13 +8,13 @@ import { webdesignsample } from '../lib/webdesignsample';
 
 const page = () => {
   return (
-    <div className='pb-48'>
-      <div className='max-w-7xl md:mx-auto mx-4 my-12 '>
-        <div className='flex flex-col md:flex-row justify-center'>
+    <div className=''>
+      <div className='max-w-7xl md:mx-auto mx-4 '>
+        <div className='flex flex-col md:flex-row justify-center '>
           <div
-            className='w-full md:w-1/2 flex items-start
+            className='w-full md:w-1/2 flex items-start 
          '>
-            <div className='sticky top-[15%]'>
+            <div className='sticky top-[35%] pb-12'>
               <span className='text-md text-gray-400 font-medium uppercase tracking-wider'>
                 Our Portfolio
               </span>
@@ -52,13 +52,13 @@ const page = () => {
           <div className='w-full md:w-1/2'>
             {workImages.map((image, index) => (
               <section
-                className='flex items-center mb-10 h-[100vh] sticky top-0'
+                className='flex items-center mb-10 h-[100vh] sticky top-0 justify-center'
                 key={index}>
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={image.width}
-                  height={image.height}
+                  width={400}
+                  height={400}
                 />
               </section>
             ))}
@@ -69,12 +69,12 @@ const page = () => {
         <span className='text-4xl text-white font-bold text-center'>
           Ads That Perform
         </span>
-        <Marquee gradient={false} speed={100} pauseOnHover={true} gap={10}>
+        <Marquee gradient={false} speed={100} pauseOnHover={true} gap={30}>
           {workImages.map((image, index) => (
             <section
               key={index}
               className='flex items-center justify-center mr-4'>
-              <Image src={image.src} alt={image.alt} width={500} height={500} />
+              <Image src={image.src} alt={image.alt} width={400} height={400} />
             </section>
           ))}
         </Marquee>
@@ -87,13 +87,13 @@ const page = () => {
             </span>
             {webdesignsample.map((website, index) => (
               <section
-                className='flex items-center mb-10 h-[100vh] sticky top-0 bg-white gap-12'
+                className='flex justify-center items-center mb-10 h-[100vh] sticky top-0 bg-white gap-12'
                 key={index}>
                 <Image
                   src={website.src}
                   alt={website.alt}
-                  width={700}
-                  height={700}
+                  width={400}
+                  height={400}
                 />
                 <div className='flex flex-col gap-12 w-full md:w-1/3'>
                   <h1 className='text-4xl text-gray-800 font-bold'>

@@ -7,7 +7,6 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 import { FaChartLine } from 'react-icons/fa6';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,8 +96,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className='py-24 text-secondary'>
-      <div className='mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-start gap-5'>
+    <section className='py-24 text-white bg-secondary '>
+      <div className='mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-start gap-5  pt-24'>
         <div className='flex flex-col w-full md:w-1/2 items-center'>
           <h1 ref={headingRef} className='text-6xl font-medium opacity-0'>
             Stay ahead of the game with our innovative approach.
@@ -162,7 +161,7 @@ const Hero = () => {
           </div>
           <div
             ref={whyUsRef}
-            className='relative w-full h-64 bg-secondary rounded-3xl p-8 text-white opacity-0'>
+            className='relative w-full h-64 bg-gray-500/10 rounded-3xl p-8 text-white opacity-0'>
             <div className='relative z-10'>
               <p className='text-sm uppercase tracking-wide text-gray-400 mb-1'>
                 Why us?

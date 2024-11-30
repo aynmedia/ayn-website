@@ -11,7 +11,7 @@ import MobileMenu from './mobileMenu';
 
 export default function Navbar() {
   return (
-    <nav className='px-3.5 lg:px-12 flex items-center justify-between w-full max-w-8xl mx-auto py-2 '>
+    <nav className='px-3.5 lg:px-12 flex items-center justify-between w-full max-w-8xl mx-auto py-2 bg-primary fixed z-10'>
       <div>
         <Link href='/'>
           <Image src={Logo} alt='logo' width={100} height={100} />
