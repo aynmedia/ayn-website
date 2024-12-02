@@ -104,9 +104,13 @@ const Hero = () => {
           </h1>
           <p
             ref={paragraphRef}
-            className='mt-4 text-xl leading-relaxed text-gray-500 opacity-0'>
-            Driven by innovation, we ensure you stay ahead. Experience
-            forward-thinking solutions for lasting success
+            className='mt-4 text-xs leading-relaxed text-gray-500 opacity-0'>
+            A award winning Digital,Social Media, Performance Marketing agency
+            in Chennai. Ayn Media provides a 360 degree Digital marketing across
+            india including SEO, Social Media, Digital Marketing, Content
+            Management, Website building, Graphic Designing and much more. We
+            are creative brand builder, strategist, helps organization to
+            achieve REVENUE with more leads with more business.
           </p>
           <div
             ref={ctaContainerRef}
@@ -122,8 +126,12 @@ const Hero = () => {
             </Link>
           </div>
           <div className='flex justify-start w-full my-10'>
-            <h1 className='text-md text-gray-400 font-medium'>
-              Average response time: Less than 24 hours
+            <h1 className='text-xs text-gray-400 font-medium'>
+              We help brand to capitalize the opportunities to achieve the sales
+              and growth. Our digital marketing services believe in the
+              creations, development of strategies, implementation of the latest
+              state of the art technology services leads to maximize the
+              business and growth.
             </h1>
           </div>
         </div>
