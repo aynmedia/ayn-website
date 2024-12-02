@@ -15,10 +15,11 @@ import heroImage from '@/../../public/images/Ayn_Media.webp';
 export default function Home() {
   return (
     <div>
-      <Hero />
       <div>
         <Image src={heroImage} alt='hero' width={2100} height={1000} />
       </div>
+      <Hero />
+
       <LogoSlider />
       <Whoweare />
       <AboutHome />

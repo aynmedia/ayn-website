@@ -23,6 +23,10 @@ export const metadata = {
     default: 'Ayn & Technologies',
     template: '%s | Ayn Media & Technologies',
   },
+  description: 'Ayn Media & Technologies',
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({ children }) {

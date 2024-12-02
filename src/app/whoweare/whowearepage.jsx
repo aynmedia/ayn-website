@@ -133,8 +133,8 @@ const Whowearepage = () => {
             emerged as a trailblazer in the digital marketing space. Backed by a
             young and dynamic team, we specialize in delivering full-service
             branding, cutting-edge digital marketing, and ad film production
-            that empower businesses to thrive in today's competitive digital
-            landscape.
+            that empower businesses to thrive in today&apos;s competitive
+            digital landscape.
           </p>
         </div>
 
@@ -179,8 +179,8 @@ const Whowearepage = () => {
               goals into focused brand strategies. We believe in nurturing our
               clients with the utmost care and responsibility, providing them
               with strategized platforms to thrive like youthful bees. Together,
-              we'll launch your brand with an identity that sets you apart from
-              the swarm. With a bold, honest, and imaginative approach, we
+              we&apos;ll launch your brand with an identity that sets you apart
+              from the swarm. With a bold, honest, and imaginative approach, we
               deliver the sweet results our clients crave, building lasting
               relationships on the wings of creativity.
             </p>
@@ -210,8 +210,8 @@ const Whowearepage = () => {
             </p>
             <h1 className='text-2xl font-bold'>PERFORMANCE</h1>
             <p>
-              Serving your strategy and 'creation' goals with action, and
-              helping you achieve a competitive advantage in the marketplace
+              Serving your strategy and &apos;creation&apos; goals with action,
+              and helping you achieve a competitive advantage in the marketplace
               while attaining profitable growth.
             </p>
           </div>
