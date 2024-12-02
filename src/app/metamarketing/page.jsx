@@ -1,5 +1,5 @@
 /** @format */
-
+'use client';
 import React from 'react';
 import { BsCheckCircle } from 'react-icons/bs';
 import { IoMegaphoneOutline } from 'react-icons/io5';
@@ -10,18 +10,15 @@ import { CiMemoPad } from 'react-icons/ci';
 import { GiOnTarget } from 'react-icons/gi';
 import { PiStrategyDuotone } from 'react-icons/pi';
 import { FaRegIdBadge } from 'react-icons/fa';
-
-// import { CiFacebook, CiInstagram, CiLinkedin, CiYoutube } from 'react-icons/ci';
 import Image from 'next/image';
 import socialMedia from '@/../../public/images/services/socialmarketing.svg';
-// import social from '@/../../public/images/services/social.svg';
 import fbinsta from '@/../../public/images/services/fbinsta.svg';
 import heroImage from '@/../../public/images/services/header.jpg';
 import Rotate from '../components/animations/rotateAnimation';
 const page = () => {
   return (
-    <div className='pb-48'>
-      <div className='max-w-7xl md:mx-auto mx-4 my-12 '>
+    <div className='pt-48'>
+      <div className='max-w-7xl md:mx-auto mx-4'>
         <div className='flex flex-col md:flex-row items-center gap-4'>
           <Rotate>
             <h1 className='md:text-7xl text-4xl font-bold'>

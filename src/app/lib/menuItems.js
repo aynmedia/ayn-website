@@ -64,6 +64,10 @@ export const menuItems = [
         name: 'How We Work',
         href: '/about/howwework',
       },
+      {
+        name: 'Our Leadership',
+        href: '/about/ourleadership',
+      },
     ],
   },
   {

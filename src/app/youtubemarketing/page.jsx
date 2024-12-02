@@ -18,8 +18,8 @@ import { LuMedal } from 'react-icons/lu';
 
 const page = () => {
   return (
-    <div className='pb-48'>
-      <div className='max-w-7xl md:mx-auto mx-4 my-12 '>
+    <div className='pt-48'>
+      <div className='max-w-7xl md:mx-auto mx-4'>
         <div className='flex flex-col md:flex-row items-center gap-4'>
           <Rotate>
             <h1 className='md:text-7xl text-4xl font-bold'>
@@ -27,7 +27,7 @@ const page = () => {
             </h1>
           </Rotate>
           <Rotate>
-            <p className='text-lg font-medium'>
+            <p className='text-md font-medium'>
               The best YouTube marketing service is here at Ayn Media.
             </p>
           </Rotate>
@@ -50,7 +50,7 @@ const page = () => {
               <h1 className='text-4xl font-bold'>YouTube Marketing</h1>
             </Rotate>
             <Rotate>
-              <p className='text-lg font-medium'>
+              <p className='text-md font-medium'>
                 The key to YouTube advertising success lies in its simplicity.
                 Content creators can easily share content with a vast audience,
                 and users can consume it with just a click. YouTube advertising
@@ -98,7 +98,7 @@ const page = () => {
               <h1 className='text-4xl font-bold'>Why Choose Ayn Media?</h1>
             </Rotate>
             <Rotate>
-              <p className='text-lg font-medium'>
+              <p className='text-md font-medium'>
                 Ayn Media, one of the top YouTube marketing and advertising
                 agencies in Chennai, recommends YouTube for clients focused on
                 brand awareness with a secondary goal of lead generation. We
@@ -112,7 +112,7 @@ const page = () => {
               </span>
               <div className='flex flex-col gap-2'>
                 <h1 className='text-2xl font-bold'>Content Creators</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   Our content experts craft content that speaks, sells, and
                   resonates with your audience.
                 </p>
@@ -124,7 +124,7 @@ const page = () => {
               </span>
               <div className='flex flex-col gap-2'>
                 <h1 className='text-2xl font-bold'>Content Strategy</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   We build strategic content plans that reduce competition and
                   enhance results.
                 </p>
@@ -136,7 +136,7 @@ const page = () => {
               </span>
               <div className='flex flex-col gap-2'>
                 <h1 className='text-2xl font-bold'>Proven Track Record</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   We’ve increased YouTube views for our clients by 14% to 45%
                   through effective YouTube SEO strategies.
                 </p>
@@ -175,7 +175,7 @@ const page = () => {
           </span>
           <div className='flex flex-col gap-4'>
             <h2 className='text-xl font-bold'>Content Creators</h2>
-            <p className='text-lg'>
+            <p className='text-md'>
               Our team of experts supports you in every aspect of content
               creation, video production, editing, and delivery.
             </p>
@@ -188,7 +188,7 @@ const page = () => {
           </span>
           <div className='flex flex-col gap-4'>
             <h2 className='text-xl font-bold'>Content Strategy</h2>
-            <p className='text-lg'>
+            <p className='text-md'>
               The success of content marketing is 50% content and 50% strategy.
               We offer proven content strategies that yield significant results.
             </p>
@@ -200,7 +200,7 @@ const page = () => {
           </span>
           <div className='flex flex-col gap-4'>
             <h2 className='text-xl font-bold'>Marketing Strategy</h2>
-            <p className='text-lg'>
+            <p className='text-md'>
               With 5+ years of experience in digital marketing and sales, our
               team helps attract new subscribers and increase reach.
             </p>
@@ -213,7 +213,7 @@ const page = () => {
           </span>
           <div className='flex flex-col gap-4'>
             <h2 className='text-xl font-bold'>Video SEO</h2>
-            <p className='text-lg'>
+            <p className='text-md'>
               If your YouTube videos aren&apos;t reaching the right audience,
               Video SEO is the solution. SEO-optimized videos can increase views
               by 15% to 40%.
@@ -237,14 +237,14 @@ const page = () => {
             <div className='md:w-1/4 w-full flex flex-col gap-12'>
               <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
                 <h1 className='text-xl font-bold'>Experienced Team</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   Our team brings over 5 years of experience in the digital
                   industry.
                 </p>
               </div>
               <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
                 <h1 className='text-xl font-bold'>Ethical SEO Process</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   Ayn Media follows white-hat methods to deliver long-term,
                   sustainable results.
                 </p>
@@ -252,7 +252,7 @@ const page = () => {
 
               <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
                 <h1 className='text-xl font-bold'>Dedicated Manager</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   We provide a dedicated manager to guide you and keep you
                   updated on progress.
                 </p>
@@ -264,21 +264,21 @@ const page = () => {
             <div className='md:w-1/4 w-full flex flex-col gap-12'>
               <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
                 <h1 className='text-xl font-bold'>Periodic Review</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   Our strategic plans, regular reviews, and transparent reports
                   set us apart from others.
                 </p>
               </div>
               <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
                 <h1 className='text-xl font-bold'>Content Research</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   We invest time and effort into content research, transforming
                   your brand&apos;s reach and impact.
                 </p>
               </div>
               <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
                 <h1 className='text-xl font-bold'>Content Marketing</h1>
-                <p className='text-lg font-medium'>
+                <p className='text-md font-medium'>
                   Our content team, with proven industry expertise, can amplify
                   your videos and boost engagement.
                 </p>

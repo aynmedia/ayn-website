@@ -12,8 +12,8 @@ module.exports = {
         destination: '/socialmedia',
       },
       {
-        source: '/services/youtube',
-        destination: '/youtube',
+        source: '/services/youtubemarketing',
+        destination: '/youtubemarketing',
       },
       {
         source: '/services/seo',
@@ -39,6 +39,7 @@ module.exports = {
         source: '/about/howwework',
         destination: '/howwework',
       },
+      { source: '/about/ourleadership', destination: '/ourleadership' },
       {
         source: '/services/linkedin',
         destination: '/linkedin',

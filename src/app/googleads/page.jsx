@@ -1,296 +1,355 @@
 /** @format */
-
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { BsCheckCircle } from 'react-icons/bs';
-import { RiTeamLine } from 'react-icons/ri';
-import { MdSavedSearch } from 'react-icons/md';
-import { CgWebsite } from 'react-icons/cg';
-import { MdOutlineScreenSearchDesktop } from 'react-icons/md';
-import { MdOutlineLiveTv } from 'react-icons/md';
-import { FaMoneyBillTrendUp } from 'react-icons/fa6';
-import { TbImageInPicture } from 'react-icons/tb';
-import google from '@/../../public/images/services/google.svg';
+import { IoMegaphoneOutline } from 'react-icons/io5';
+import { FaUncharted } from 'react-icons/fa';
+import { BsGlobe } from 'react-icons/bs';
+import { FaBlog } from 'react-icons/fa';
+import { CiYoutube } from 'react-icons/ci';
+import { MdOutlineAlternateEmail } from 'react-icons/md';
+import { MdOutlinePermDeviceInformation } from 'react-icons/md';
 import Image from 'next/image';
-import googleplus from '@/../../public/images/services/googleplus.jpg';
-import googleimage from '@/../../public/images/services/googleimage.jpg';
+import socialMedia from '@/../../public/images/services/socialmarketing.svg';
+import social from '@/../../public/images/services/social.svg';
+import content from '@/../../public/images/services/content.svg';
 import heroImage from '@/../../public/images/services/header.jpg';
-import Rotate from '../components/animations/rotateAnimation';
-const page = () => {
+
+gsap.registerPlugin(ScrollTrigger);
+
+const GoogleAdsPage = () => {
+  const sectionRefs = useRef([]);
+  const contentRefs = useRef([]);
+
+  useEffect(() => {
+    // Animate sections on scroll
+    sectionRefs.current.forEach((section, index) => {
+      gsap.fromTo(
+        section,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    });
+
+    // Animate content elements
+    contentRefs.current.forEach((content, index) => {
+      gsap.fromTo(
+        content,
+        {
+          opacity: 0,
+          x: index % 2 === 0 ? -50 : 50,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: content,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    });
+
+    // Hero title animation
+    const heroTitle = document.querySelector('h1');
+    if (heroTitle) {
+      gsap.fromTo(
+        heroTitle,
+        {
+          opacity: 0,
+          scale: 0.8,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: 'back.out(1.7)',
+        }
+      );
+    }
+
+    // Content marketing type cards animation
+    const contentTypeCards = document.querySelectorAll('.content-type-card');
+    gsap.fromTo(
+      contentTypeCards,
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: contentTypeCards[0],
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  }, []);
+
   return (
-    <div className='pb-48'>
-      <div className='max-w-7xl md:mx-auto mx-4 my-12 '>
+    <div className='pt-48'>
+      <div
+        className='max-w-7xl md:mx-auto mx-4'
+        ref={(el) => sectionRefs.current.push(el)}>
         <div className='flex flex-col md:flex-row items-center gap-4'>
-          <Rotate>
+          <div ref={(el) => contentRefs.current.push(el)}>
             <h1 className='md:text-7xl text-4xl font-bold'>
-              Leverage Your Business with Google Ads
+              Let Us Tell Your Brand Story
             </h1>
-          </Rotate>
-          <Rotate>
-            <p className='text-lg font-medium'>
-              Let’s elevate your business game with Ayn Media.
+          </div>
+          <div ref={(el) => contentRefs.current.push(el)}>
+            <p className='text-md font-medium'>
+              The best content marketing service at Ayn Media.
             </p>
-          </Rotate>
+          </div>
         </div>
 
-        <div className='flex flex-col md:flex-row items-center gap-4 my-12'>
-          <Rotate>
-            <p className='text-xl font-medium'>
+        <div
+          className='flex flex-col md:flex-row items-center gap-4 my-12'
+          ref={(el) => sectionRefs.current.push(el)}>
+          <div ref={(el) => contentRefs.current.push(el)}>
+            <p className='text-md font-medium'>
               Over 3.5 billion people worldwide actively use social
               media—that&apos;s an immense pool of potential clients waiting to
-              be reached. In today’s digital age, establishing a robust online
+              be reached. In today's digital age, establishing a robust online
               presence is essential.
             </p>
-          </Rotate>
+          </div>
         </div>
-        <div className='bg-primary h-[400px] w-full overflow-hidden my-12'>
+        <div
+          className='bg-primary h-[400px] w-full overflow-hidden my-12'
+          ref={(el) => sectionRefs.current.push(el)}>
           <Image src={heroImage} alt='hero' objectFit='cover' />
         </div>
-        <div className='flex md:flex-row flex-col items-center gap-4'>
-          <div className='w-full md:w-1/2 flex flex-col gap-4'>
-            <Rotate>
-              <h1 className='text-4xl font-bold'>
-                Google Ads - PPC, CPM, CPA, CPC, CPL
-              </h1>
-            </Rotate>
-            <Rotate>
-              <p className='text-lg font-medium'>
-                Google is a powerhouse for managing result-driven ad campaigns.
-                Consistently guiding the Google Ads platform on where to focus
-                can make all the difference. Here’s why Google Ads stand out
-                from other media:
-              </p>
-            </Rotate>
-            <ul className='text-xl font-medium flex flex-col gap-4'>
-              <Rotate>
-                <li className='flex gap-4'>
-                  <BsCheckCircle size={24} className='text-primary' />
-                  Easy access to hot prospects
+        <div
+          className='flex md:flex-row flex-col'
+          ref={(el) => sectionRefs.current.push(el)}>
+          <div
+            className='w-full md:w-1/2 flex flex-col gap-4'
+            ref={(el) => contentRefs.current.push(el)}>
+            <h1 className='text-4xl font-bold'>Content Marketing</h1>
+            <p className='text-md font-medium'>
+              Did you know that over 50% of businesses don't have a documented
+              content marketing strategy? Content marketing is about creating
+              and delivering strategic content that motivates users to take
+              action, communicate an idea, or establish thought leadership.
+            </p>
+            <ul className='text-md font-medium flex flex-col gap-4'>
+              {[
+                'Website traffic can increase by 7X through content marketing',
+                'Custom content fosters a stronger bond with customers',
+                'Content marketing costs 62% less than traditional marketing',
+                '50% of successful organizations use content marketing strategies',
+              ].map((item, index) => (
+                <li key={index} className='flex gap-4'>
+                  <BsCheckCircle size={24} className='text-primary' /> {item}
                 </li>
-              </Rotate>
-              <Rotate>
-                <li className='flex gap-4'>
-                  <BsCheckCircle size={24} className='text-primary' /> Faster
-                  results compared to SEO
-                </li>
-              </Rotate>
-              <Rotate>
-                <li className='flex gap-4'>
-                  <BsCheckCircle size={24} className='text-primary' />A highly
-                  effective way to understand demand
-                </li>
-              </Rotate>
-              <Rotate>
-                <li className='flex gap-4'>
-                  <BsCheckCircle size={24} className='text-primary' />
-                  Lower competition in CPC, making it more cost-effective
-                </li>
-              </Rotate>
+              ))}
             </ul>
           </div>
-          <div className='w-full md:w-1/2 flex flex-col gap-4 justify-center items-center'>
+          <div
+            className='w-full md:w-1/2 flex flex-col gap-4 justify-center items-center'
+            ref={(el) => contentRefs.current.push(el)}>
             <Image
-              src={googleplus}
+              src={socialMedia}
               alt='social-media'
-              width={800}
-              height={800}
+              width={500}
+              height={500}
             />
           </div>
         </div>
-        <div className='flex md:flex-row flex-col mt-24 gap-4'>
-          <div className='w-full md:w-1/2 flex flex-col gap-4 justify-center items-center'>
-            <Image src={googleimage} alt='social' width={600} height={600} />
+
+        {/* Rest of the content remains the same, just add refs */}
+        <div
+          className='flex md:flex-row flex-col mt-12'
+          ref={(el) => sectionRefs.current.push(el)}>
+          <div
+            className='w-full md:w-1/2 flex flex-col gap-4 justify-center items-center'
+            ref={(el) => contentRefs.current.push(el)}>
+            <Image src={social} alt='social' width={600} height={600} />
           </div>
-          <div className='w-full md:w-1/2 flex flex-col gap-4'>
-            <Rotate>
-              {' '}
-              <h1 className='text-4xl font-bold'>Why Choose Ayn Media?</h1>
-            </Rotate>
-            <Rotate>
-              <p className='text-lg font-medium'>
-                We craft strategies that deliver consistent results for
-                Pay-per-Click (PPC) campaigns. By understanding your target
-                audience, fine-tuning messaging, and adjusting key metrics, we
-                ensure effective Google Ads outcomes. Here’s why clients choose
-                us:
-              </p>
-            </Rotate>
-            <div className='flex gap-4 mb-2 p-8 hover:shadow-xl rounded-lg'>
-              <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
-                <RiTeamLine size={64} />
-              </span>
-              <div className='flex flex-col gap-2'>
-                <h1 className='text-2xl font-bold'>Experienced Team</h1>
-                <p className='text-lg font-medium'>
-                  We implement proven strategies that minimize budget wastage in
-                  trial campaigns
-                </p>
-              </div>
-            </div>
-            <div className='flex gap-4 mb-2 p-8 hover:shadow-xl rounded-lg'>
-              <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
-                <MdSavedSearch size={64} />
-              </span>
-              <div className='flex flex-col gap-2'>
-                <h1 className='text-2xl font-bold'>Keyword Research Experts</h1>
-                <p className='text-lg font-medium'>
-                  Our focus on strategic keyword research helps reduce
-                  competition and boost results.
-                </p>
-              </div>
-            </div>
-            <div className='flex gap-4 mb-2 p-8 hover:shadow-xl rounded-lg'>
-              <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
-                <CgWebsite size={64} />{' '}
-              </span>
-              <div className='flex flex-col gap-2'>
-                <h1 className='text-2xl font-bold'>Landing Page Specialists</h1>
-                <p className='text-lg font-medium'>
-                  We convert traffic into customers by designing high-converting
-                  landing pages backed by a strong content strategy.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='bg-secondary py-24 w-full '>
-        <div className='max-w-7xl md:mx-auto mx-4 flex flex-col items-center justify-center gap-6'>
-          <Rotate>
-            <h1 className='text-3xl font-bold text-white'>
-              4 Types of Ads in Google Advertising
-            </h1>
-          </Rotate>
-          {/* <Rotate>
-            <p className='text-xl font-medium text-white text-center'>
-              India’s social media user base is expanding every second—along
-              with your potential leads. Our team of social media experts crafts
-              tailored marketing campaigns designed to maximize your brand’s
-              impact across each platform.
+          <div
+            className='w-full md:w-1/2 flex flex-col gap-4'
+            ref={(el) => contentRefs.current.push(el)}>
+            <h1 className='text-4xl font-bold'>Why Choose Ayn Media?</h1>
+            <p className='text-md font-medium'>
+              Ayn Media, one of the leading content marketing agencies in
+              Chennai, recommends content marketing for companies,
+              entrepreneurs, and startups looking to build consistent and deeper
+              brand reach in a short time. Content marketing is all about
+              engaging people's interests.
             </p>
-          </Rotate> */}
-        </div>
-      </div>
-      <div className='max-w-7xl md:mx-auto mx-4 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 my-12 '>
-        <div className='absolute inset-0 flex justify-between opacity-10 -z-10 '>
-          <span className='w-[2px] bg-gray-500 h-full'></span>
-          <span className='w-[2px] bg-gray-500 h-full'></span>
-          <span className='w-[2px] bg-gray-500 h-full'></span>
-          <span className='w-[2px] bg-gray-500 h-full'></span>
+            {/* Rest of the content cards */}
+            {[
+              {
+                icon: <IoMegaphoneOutline size={64} />,
+                title: 'Content Creators',
+                description:
+                  'Our content experts craft content that speaks, sells, and resonates with your audience.',
+              },
+              {
+                icon: <FaUncharted size={64} />,
+                title: 'Content Strategy',
+                description:
+                  'We develop content strategies that reduce competition and drive better results.',
+              },
+              {
+                icon: <BsGlobe size={64} />,
+                title: 'Marketing Strength',
+                description:
+                  'Our content marketing experts implement these strategies, adding significant value to your brands growth.',
+              },
+            ].map((card, index) => (
+              <div
+                key={index}
+                className='flex gap-4 mb-2 p-8 hover:shadow-xl rounded-lg'
+                ref={(el) => contentRefs.current.push(el)}>
+                <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
+                  {card.icon}
+                </span>
+                <div className='flex flex-col gap-2'>
+                  <h1 className='text-2xl font-bold'>{card.title}</h1>
+                  <p className='text-md font-medium'>{card.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className='p-12 flex gap-6 justify-center bg-white rounded-lg shadow-lg hover:bg-secondary hover:text-white'>
-          {' '}
-          <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24 '>
-            <MdOutlineScreenSearchDesktop size={64} />
-          </span>
-          <div className='flex flex-col gap-4'>
-            <h2 className='text-xl font-bold'>Search Ads</h2>
-            <p className='text-lg'>
-              By understanding the right keywords, Search Ads provide a direct
-              way to reach customers who have an immediate need.
-            </p>
-          </div>
+        {/* Content Types Section */}
+        <div className='max-w-7xl md:mx-auto mx-4 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 my-12'>
+          {[
+            {
+              icon: <FaBlog size={64} />,
+              title: 'Blogging',
+              description:
+                'Our team of expert writers helps with blog topic research, writing, and effective keyword implementation to drive traffic.',
+            },
+            {
+              icon: <CiYoutube size={64} />,
+              title: 'Video Creation',
+              description:
+                'Content marketing success is 50% content and 50% strategy. Ayn Media offers proven video production strategies that deliver broad, impactful results.',
+            },
+            {
+              icon: <MdOutlineAlternateEmail size={64} />,
+              title: 'Email Content',
+              description:
+                'With over 5 years of experience in digital marketing and sales, our team helps you attract new subscribers and expand your reach with engaging email content.',
+            },
+            {
+              icon: <MdOutlinePermDeviceInformation size={64} />,
+              title: 'Infographics',
+              description:
+                'Wondering why your content isnt reaching your audience effectively? Infographics are one of the most powerful ways to deliver content and engage your audience.',
+            },
+          ].map((type, index) => (
+            <div
+              key={index}
+              className='p-12 flex gap-6 justify-center bg-white rounded-lg border border-gray-400/50 hover:bg-secondary hover:text-white content-type-card'>
+              <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
+                {type.icon}
+              </span>
+              <div className='flex flex-col gap-4'>
+                <h2 className='text-xl font-bold'>{type.title}</h2>
+                <p className='text-md'>{type.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className='p-12 flex gap-6 justify-center bg-white rounded-lg shadow-lg hover:bg-secondary hover:text-white'>
-          {' '}
-          <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
-            <TbImageInPicture size={64} />
-          </span>
-          <div className='flex flex-col gap-4'>
-            <h2 className='text-xl font-bold'>Display Ads</h2>
-            <p className='text-lg'>
-              Create strong brand awareness by leveraging the right audience
-              insights and Google Ads metrics.
-            </p>
-          </div>
-        </div>
-        <div className='p-12 flex gap-6 justify-center bg-white rounded-lg shadow-lg hover:bg-secondary hover:text-white'>
-          <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
-            <FaMoneyBillTrendUp size={64} />
-          </span>
-          <div className='flex flex-col gap-4'>
-            <h2 className='text-xl font-bold'>Remarketing</h2>
-            <p className='text-lg'>
-              Studies show that remarketing can boost conversions by 50% – 60%,
-              effectively targeting users across multiple devices.
-            </p>
-          </div>
-        </div>
-        <div className='p-12 flex gap-6 justify-center bg-white rounded-lg shadow-lg hover:bg-secondary hover:text-white'>
-          {' '}
-          <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
-            <MdOutlineLiveTv size={64} />
-          </span>
-          <div className='flex flex-col gap-4'>
-            <h2 className='text-xl font-bold'>Video Ads</h2>
-            <p className='text-lg'>
-              54% of consumers prefer more video content, making it an effective
-              tool to engage millennials and other audience groups.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className='py-12'>
-        <div className='max-w-7xl md:mx-auto mx-4 flex flex-col items-center justify-center gap-6'>
-          <Rotate>
+
+        {/* Special Features Section */}
+        <div className='py-12' ref={(el) => sectionRefs.current.push(el)}>
+          <div className='max-w-7xl md:mx-auto mx-4 flex flex-col items-center justify-center gap-6'>
             <h1 className='text-3xl font-bold'>Our Special Features</h1>
-          </Rotate>
-          {/* <Rotate>
-            <p className='text-xl font-medium'>
+            <p className='text-md font-medium text-center'>
               We offer a wide range of services to help you achieve your
               marketing goals. From social media marketing to content creation,
               we have the tools and expertise to help you succeed.
             </p>
-          </Rotate> */}
-          <div className='flex flex-col md:flex-row gap-4'>
-            <div className='md:w-1/4 w-full flex flex-col gap-12'>
-              <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
-                <h1 className='text-xl font-bold'>Website Support</h1>
-                <p className='text-lg font-medium'>
-                  Our website design team is here to optimize and enhance your
-                  website’s performance.
-                </p>
+            <div className='flex flex-col md:flex-row gap-4'>
+              {/* Feature columns remain the same */}
+              <div className='md:w-1/4 w-full flex flex-col gap-12'>
+                {[
+                  {
+                    title: 'Experienced Team',
+                    description:
+                      'Our team brings over 5 years of experience in the digital industry.',
+                  },
+                  {
+                    title: 'Wide Range',
+                    description:
+                      'Ayn Media offers a comprehensive range of content marketing services.',
+                  },
+                  {
+                    title: 'Dedicated Manager',
+                    description:
+                      'We provide a dedicated manager to guide you and keep you updated.',
+                  },
+                ].map((feature, index) => (
+                  <div
+                    key={index}
+                    className='border border-gray-400/50 rounded-lg p-4 hover:bg-secondary hover:text-white'
+                    ref={(el) => contentRefs.current.push(el)}>
+                    <h1 className='text-xl font-bold'>{feature.title}</h1>
+                    <p className='text-md font-medium'>{feature.description}</p>
+                  </div>
+                ))}
               </div>
-              <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
-                <h1 className='text-xl font-bold'>Landing Page</h1>
-                <p className='text-lg font-medium'>
-                  Our experts create high-converting landing pages with a
-                  well-defined content strategy.
-                </p>
+              <div
+                className='md:w-2/4 w-full'
+                ref={(el) => contentRefs.current.push(el)}>
+                <Image src={content} alt='social' width={1000} height={1000} />
               </div>
-
-              <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
-                <h1 className='text-xl font-bold'>Dedicated Manager</h1>
-                <p className='text-lg font-medium'>
-                  A dedicated manager from Ayn Media will guide and keep you
-                  updated throughout the process.
-                </p>
-              </div>
-            </div>
-            <div className='md:w-2/4 w-full'>
-              <Image src={google} alt='social' width={1000} height={1000} />
-            </div>
-            <div className='md:w-1/4 w-full flex flex-col gap-12'>
-              <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
-                <h1 className='text-xl font-bold'>Periodic Review</h1>
-                <p className='text-lg font-medium'>
-                  Our strategic planning and periodic reviews set us apart from
-                  others, ensuring continuous improvement.
-                </p>
-              </div>
-              <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
-                <h1 className='text-xl font-bold'>Keyword Research</h1>
-                <p className='text-lg font-medium'>
-                  We invest time and effort into keyword research, changing the
-                  game for your Google Ads campaigns.
-                </p>
-              </div>
-              <div className='border border-gray-400/50 rounded-lg p-4 shadow-lg hover:bg-secondary hover:text-white'>
-                <h1 className='text-xl font-bold'>Creative Ads</h1>
-                <p className='text-lg font-medium'>
-                  Our power-packed copywriting and digital teams work together
-                  to add immense value to your ad results.
-                </p>
+              <div className='md:w-1/4 w-full flex flex-col gap-12'>
+                {[
+                  {
+                    title: 'Periodic Review',
+                    description:
+                      'Our strategic plans, regular reviews, and transparent reports set us apart from others.',
+                  },
+                  {
+                    title: 'Content Research',
+                    description:
+                      'We invest time and effort into content research, transforming your brands reach.',
+                  },
+                  {
+                    title: 'Content Production',
+                    description:
+                      'Our content team, equipped with proven industry knowledge, creates high-quality, impactful content.',
+                  },
+                ].map((feature, index) => (
+                  <div
+                    key={index}
+                    className='border border-gray-400/50 rounded-lg p-4 hover:bg-secondary hover:text-white'
+                    ref={(el) => contentRefs.current.push(el)}>
+                    <h1 className='text-xl font-bold'>{feature.title}</h1>
+                    <p className='text-md font-medium'>{feature.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -300,4 +359,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default GoogleAdsPage;

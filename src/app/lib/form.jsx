@@ -4,12 +4,17 @@ import React from 'react';
 
 const EnquiryForm = () => {
   const serviceOptions = [
-    { value: '', label: 'Select a service' },
+    { value: 'digital-marketing', label: 'Digital Marketing' },
     { value: 'web-development', label: 'Web Development' },
     { value: 'mobile-development', label: 'Mobile Development' },
     { value: 'ui-ux-design', label: 'UI/UX Design' },
-    { value: 'digital-marketing', label: 'Digital Marketing' },
     { value: 'cloud-services', label: 'Cloud Services' },
+    { value: 'seo', label: 'SEO' },
+    { value: 'social-media', label: 'Social Media' },
+    { value: 'performance-marketing', label: 'Performance Marketing' },
+    { value: 'graphic-design', label: 'Graphic Design' },
+    { value: 'photoshoot', label: 'Photoshoot' },
+    { value: 'video-shoot', label: 'Video Shoot' },
   ];
 
   const budgetOptions = [
