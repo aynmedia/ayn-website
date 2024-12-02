@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import Whowearepage from './whowearepage';
+import Whowearepage from './who';
 
 export const metadata = {
   title: 'Who We Are',
