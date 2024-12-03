@@ -28,6 +28,10 @@ module.exports = {
         destination: '/contentmarketing',
       },
       {
+        source: '/services/design',
+        destination: '/design',
+      },
+      {
         source: '/about/whoweare',
         destination: '/whoweare',
       },
@@ -39,7 +43,10 @@ module.exports = {
         source: '/about/howwework',
         destination: '/howwework',
       },
-      { source: '/about/ourleadership', destination: '/ourleadership' },
+      {
+        source: '/about/ourleadership',
+        destination: '/ourleadership',
+      },
       {
         source: '/services/linkedin',
         destination: '/linkedin',
@@ -47,6 +54,18 @@ module.exports = {
       {
         source: '/services/influencer',
         destination: '/influencer',
+      },
+      {
+        source: '/services/explainervideos',
+        destination: '/explainervideos',
+      },
+      {
+        source: '/services/productphotography',
+        destination: '/productphotography',
+      },
+      {
+        source: '/services/corporatevideos',
+        destination: '/corporatevideos',
       },
     ];
   },

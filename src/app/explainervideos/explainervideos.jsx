@@ -4,19 +4,21 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { BsCheckCircle } from 'react-icons/bs';
-import { IoMegaphoneOutline } from 'react-icons/io5';
-import { FaUncharted } from 'react-icons/fa';
-import { BsGlobe } from 'react-icons/bs';
-import { CiFacebook, CiInstagram, CiLinkedin, CiYoutube } from 'react-icons/ci';
+import { TiSortAlphabetically } from 'react-icons/ti';
+import { MdOutlineSupportAgent, MdRebaseEdit } from 'react-icons/md';
+import { GiVideoCamera } from 'react-icons/gi';
+import { PiSuitcaseSimpleDuotone } from 'react-icons/pi';
+import { FaShopify } from 'react-icons/fa6';
+import { FaYoutube } from 'react-icons/fa';
 import Image from 'next/image';
-import socialMedia from '@/../../public/images/services/socialmarketing.svg';
+import ev from '@/../../public/images/services/ev.png';
 import social from '@/../../public/images/services/social.svg';
-import feature from '@/../../public/images/services/feature.svg';
+import video from '@/../../public/images/services/video.svg';
 import heroImage from '@/../../public/images/services/header.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SocialMediaPage = () => {
+const ExplainerVideos = () => {
   const sectionRefs = useRef([]);
 
   useEffect(() => {
@@ -52,24 +54,12 @@ const SocialMediaPage = () => {
           className='flex flex-col md:flex-row items-center gap-4 '>
           <div className='flex gap-4'>
             <h1 className='md:text-7xl text-4xl font-bold'>
-              Give your brand a powerful voice
+              Clarify your brand's purpose, message, and journey
             </h1>
             <p className='text-md font-medium mt-4 max-w-4xl'>
-              Ayn Media – Delivering top-notch social media marketing to elevate
-              your brand’s impact.
+              We simplify the complex, making it easy to understand.
             </p>
           </div>
-        </div>
-
-        <div
-          ref={(el) => sectionRefs.current.push(el)}
-          className='flex flex-col md:flex-row items-center gap-4 my-12'>
-          <p className='text-md font-medium'>
-            Over 3.5 billion people worldwide actively use social
-            media—that&apos;s an immense pool of potential clients waiting to be
-            reached. In today’s digital age, establishing a robust online
-            presence is essential.
-          </p>
         </div>
 
         <div className='bg-primary h-[400px] w-full overflow-hidden my-12'>
@@ -80,20 +70,23 @@ const SocialMediaPage = () => {
           ref={(el) => sectionRefs.current.push(el)}
           className='flex md:flex-row flex-col'>
           <div className='w-full md:w-1/2 flex flex-col gap-4'>
-            <h1 className='text-4xl font-bold'>Social Media Marketing</h1>
+            <h1 className='text-4xl font-bold'>
+              Explainer Videos - Simplifying the Complex
+            </h1>
             <p className='text-md font-medium'>
-              Over 3.5 billion people worldwide actively use social
-              media—that&apos;s an immense pool of potential clients waiting to
-              be reached. In today’s digital age, establishing a robust online
-              presence is essential.
+              Explainer videos are concise, engaging visuals that break down
+              complex topics into easy-to-understand concepts. These videos
+              communicate the essence of your brand, making it accessible and
+              clear for your target audience. With the right balance of
+              simplicity and creativity, explainer videos provide clarity while
+              capturing attention.
             </p>
             <ul className='text-md font-medium flex flex-col gap-4'>
               {[
-                'Drives more traffic to your website or page',
-                'Enhances brand awareness',
-                'Builds customer trust',
-                'Connects your brand with both loyal and new customers',
-                'Demonstrates authenticity and authority',
+                'Spark interest',
+                'Increase engagement on landing pages',
+                'Versatile for multiple platforms',
+                'Capture attention in a short span',
               ].map((item, index) => (
                 <li key={index} className='flex gap-4 items-center'>
                   <BsCheckCircle size={24} className='text-primary' />
@@ -103,12 +96,7 @@ const SocialMediaPage = () => {
             </ul>
           </div>
           <div className='w-full md:w-1/2 flex flex-col gap-4 justify-center items-center'>
-            <Image
-              src={socialMedia}
-              alt='social-media'
-              width={500}
-              height={500}
-            />
+            <Image src={ev} alt='social-media' width={500} height={500} />
           </div>
         </div>
 
@@ -121,30 +109,30 @@ const SocialMediaPage = () => {
           <div className='w-full md:w-1/2 flex flex-col gap-4'>
             <h1 className='text-4xl font-bold'>Why Choose Ayn Media?</h1>
             <p className='text-md font-medium'>
-              From amplifying your brand’s voice to transforming loyal followers
-              into valuable leads, we handle every facet of social media
-              marketing. Our team of experts is dedicated to promoting your
-              brand and fostering a trusted, thriving community with strategic
-              calls-to-action.
+              At Ayn Media, we know that clarity is key. Whether explaining
+              intricate data, high-tech products, or everyday services, we make
+              it easy for your audience to understand. Our creative team brings
+              innovative ideas to life, producing videos that are both
+              professional and engaging.
             </p>
             {[
               {
-                icon: <IoMegaphoneOutline size={64} />,
-                title: 'Brand Voice',
+                icon: <MdRebaseEdit size={64} />,
+                title: 'Strategy Experts',
                 description:
-                  'We give your brand a distinct voice on social media that speaks, attracts, and connects with your audience.',
+                  'We craft well-thought-out strategies that align with your brand’s message.',
               },
               {
-                icon: <FaUncharted size={64} />,
-                title: 'Strategic Expertise',
+                icon: <TiSortAlphabetically size={64} />,
+                title: 'Unique Designs',
                 description:
-                  'Our team crafts a reliable, engaging strategy that strengthens brand communication through captivating content.',
+                  'Our customized designs ensure your brand stands out.',
               },
               {
-                icon: <BsGlobe size={64} />,
-                title: 'From Followers to Leads',
+                icon: <MdOutlineSupportAgent size={64} />,
+                title: 'Content Strategy',
                 description:
-                  'We convert your loyal followers into prospective leads with compelling, action-oriented strategies.',
+                  'We enhance your video content, ensuring it delivers a powerful message.',
               },
             ].map((item, index) => (
               <div
@@ -153,8 +141,8 @@ const SocialMediaPage = () => {
                 <span className='rounded-full bg-primary p-4 flex items-center justify-center w-24 h-24'>
                   {item.icon}
                 </span>
-                <div className='flex flex-col gap-2'>
-                  <h1 className='text-2xl font-bold'>{item.title}</h1>
+                <div className='flex flex-col gap-2 justify-center'>
+                  <h1 className='text-xl font-bold'>{item.title}</h1>
                   <p className='text-md font-medium'>{item.description}</p>
                 </div>
               </div>
@@ -165,13 +153,13 @@ const SocialMediaPage = () => {
       <div className='bg-secondary py-24 w-full mt-12'>
         <div className='max-w-7xl md:mx-auto mx-4 flex flex-col items-center justify-center gap-6'>
           <h1 className='text-3xl font-bold text-white text-center'>
-            4 Major Platforms of Social Media Marketing
+            4 Major Services of Explainer Videos
           </h1>
           <p className='text-md font-medium text-white text-center'>
-            India’s social media user base is expanding every second—along with
-            your potential leads. Our team of social media experts crafts
-            tailored marketing campaigns designed to maximize your brand’s
-            impact across each platform.
+            At Ayn Media, we specialize in creating explainer videos that cater
+            to your brand's specific needs. Our experienced team ensures your
+            brand message is communicated effectively through unique,
+            high-quality videos.
           </p>
         </div>
       </div>
@@ -181,28 +169,28 @@ const SocialMediaPage = () => {
         className='max-w-7xl md:mx-auto mx-4 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 my-12'>
         {[
           {
-            icon: <CiFacebook size={64} />,
-            name: 'FACEBOOK',
+            icon: <GiVideoCamera size={64} />,
+            name: 'Animated Explainer Videos',
             description:
-              'With over 2.23 billion monthly active users, this platform is perfect for reaching diverse age groups worldwide.',
+              'Use animation to bring products, services, and concepts to life in an engaging way.',
           },
           {
-            icon: <CiInstagram size={64} />,
-            name: 'INSTAGRAM',
+            icon: <PiSuitcaseSimpleDuotone size={64} />,
+            name: 'Product Explainer Videos',
             description:
-              'With over 1 billion monthly users, this platform is ideal for connecting with today’s trends and engaging the youth.',
+              'Showcase your products clearly, generate more leads, and boost sales.',
           },
           {
-            icon: <CiLinkedin size={64} />,
-            name: 'LINKEDIN',
+            icon: <FaYoutube size={64} />,
+            name: 'Whiteboard Explainer Videos',
             description:
-              'With over 294 million monthly active users, this platform is the go-to choice for B2B marketing.',
+              'Use whiteboard animation to communicate your message with eye-catching visuals.',
           },
           {
-            icon: <CiYoutube size={64} />,
-            name: 'YOUTUBE',
+            icon: <FaShopify size={64} />,
+            name: 'Corporate Videos',
             description:
-              'With over 1.9 billion monthly users, YouTube stands as one of the most widely viewed and utilized marketing platforms worldwide.',
+              'Highlight your company’s vision, culture, services, and client portfolio through professional corporate videos.',
           },
         ].map((platform, index) => (
           <div
@@ -222,28 +210,28 @@ const SocialMediaPage = () => {
       <div ref={(el) => sectionRefs.current.push(el)} className='py-12'>
         <div className='max-w-7xl md:mx-auto mx-4 flex flex-col items-center justify-center gap-6'>
           <h1 className='text-3xl font-bold'>Our Special Features</h1>
-          <p className='text-md font-medium text-center'>
+          {/* <p className='text-md font-medium text-center'>
             We offer a wide range of services to help you achieve your marketing
             goals. From social media marketing to content creation, we have the
             tools and expertise to help you succeed.
-          </p>
+          </p> */}
           <div className='flex flex-col md:flex-row gap-4'>
             <div className='md:w-1/4 w-full flex flex-col gap-12'>
               {[
                 {
-                  title: 'Facebook Marketing',
+                  title: 'Corporate Videos',
                   description:
-                    'From pages to advertisements, we integrate every aspect of Facebook into our campaigns to drive impactful results.',
+                    'We help you effectively communicate your corporate identity with ease and precision.',
                 },
                 {
-                  title: 'Instagram Marketing',
+                  title: 'Stop Motion Videos',
                   description:
-                    'We cover it all—feeds, reels, IGTV, stories, and more—to ensure your brand shines on Instagram.',
+                    'We bring your brand to life by seamlessly merging frames to create engaging motion, helping your brand reach new heights.',
                 },
                 {
-                  title: 'LinkedIn Marketing',
+                  title: 'Motion Graphics Videos',
                   description:
-                    'From content sharing and networking to advertising, we handle every aspect of LinkedIn marketing.',
+                    'We craft motion graphic videos that are not only visually appealing but also cost-effective, giving your brand a professional look.',
                 },
               ].map((feature, index) => (
                 <div
@@ -255,24 +243,24 @@ const SocialMediaPage = () => {
               ))}
             </div>
             <div className='md:w-2/4 w-full'>
-              <Image src={feature} alt='social' width={1000} height={1000} />
+              <Image src={video} alt='social' width={1000} height={1000} />
             </div>
             <div className='md:w-1/4 w-full flex flex-col gap-12'>
               {[
                 {
-                  title: 'YouTube Marketing',
+                  title: 'Infographics Videos',
                   description:
-                    'We craft engaging, viral video content that resonates with your audience.',
+                    'We combine visually stunning graphics with engaging content and data to provide your audience with an insightful, easy-to-understand visual representation.',
                 },
                 {
-                  title: 'Social Media Optimization (SMO)',
+                  title: 'Whiteboard Videos',
                   description:
-                    'We create SMO strategies to boost brand awareness and strengthen connections with customers.',
+                    'We simplify complex information with creative whiteboard animations, capturing your audience’s attention and conveying your message effectively',
                 },
                 {
-                  title: 'Online Reputation Management',
+                  title: 'Live Shoot Videos',
                   description:
-                    'We help monitor and enhance your brand’s online presence to drive better results.',
+                    'We create high-quality live shoot videos, shot with precision and edited flawlessly to captivate your viewers.',
                 },
               ].map((feature, index) => (
                 <div
@@ -290,4 +278,4 @@ const SocialMediaPage = () => {
   );
 };
 
-export default SocialMediaPage;
+export default ExplainerVideos;

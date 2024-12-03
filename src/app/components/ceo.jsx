@@ -1,80 +1,109 @@
 /** @format */
+
 'use client';
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import ceo from '@/../../public/images/Ayntech_CEO.webp';
-import ceoSign from '@/../../public/images/CEO_Sign.png';
-import Aynoffice from '@/../../public/images/aynoffice.webp';
+import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
+import ceo from '@/../../public/images/Ayntech_CEO.webp';
+import ceoSign from '@/../../public/images/CEO_Sign.png';
+import Aynoffice from '@/../../public/images/aynoffice.webp';
 
 const Ceo = () => {
   const containerRef = useRef(null);
   const textRefs = useRef([]);
+  const ceoContainerRef = useRef(null);
+  const officeContainerRef = useRef(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
 
-    // Sync Lenis with GSAP ScrollTrigger
-    ScrollTrigger.scrollerProxy(containerRef.current, {
-      scrollTop(value) {
-        return arguments.length
-          ? window.scrollTo({ top: value })
-          : window.scrollY;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-      pinType: containerRef.current.style.transform ? 'transform' : 'fixed',
+    // Initialize Lenis smooth scrolling
+    const lenis = new Lenis({
+      lerp: 0.07,
+      smooth: true,
+      direction: 'vertical',
     });
 
-    // Sequential Animation
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 50%',
-        end: 'bottom 50%',
-        duration: 3,
-        scrub: true,
-        markers: true,
-        // once: true, // Ensure animation runs only once
-      },
+    // Lenis scroll event handling
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
     });
 
-    // Animate split text
+    // Prevent scrolling during initial load
+    gsap.set('body', { overflow: 'auto' });
+
+    // Text Animation
     textRefs.current.forEach((el) => {
       if (el) {
         const split = new SplitType(el, { type: 'lines' });
-        timeline.from(split.lines, {
+
+        gsap.from(split.lines, {
           opacity: 0,
-          scale: 0.8,
-          rotateX: 90,
-          duration: 3,
-          perspective: 1000,
-          stagger: 0.5,
-          ease: 'power3.out',
+          y: 50,
+          rotationX: 50,
+          transformOrigin: '0% 50% -50',
+          stagger: 0.1,
+          duration: 1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 80%',
+            end: 'top 50%',
+            toggleActions: 'play none none reverse',
+          },
         });
       }
     });
 
-    // Refresh ScrollTrigger on resize
-    const handleResize = () => ScrollTrigger.refresh();
-    window.addEventListener('resize', handleResize);
+    // Image Parallax
+    const imageContainers = [
+      {
+        container: ceoContainerRef.current,
+        image: ceoContainerRef.current?.querySelector('img'),
+      },
+      {
+        container: officeContainerRef.current,
+        image: officeContainerRef.current?.querySelector('img'),
+      },
+    ];
 
+    imageContainers.forEach(({ container, image }) => {
+      if (container && image) {
+        gsap.fromTo(
+          image,
+          {
+            yPercent: -80,
+            ease: 'none',
+          },
+          {
+            yPercent: 20,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: container,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: true,
+            },
+          }
+        );
+      }
+    });
+
+    // Cleanup
     return () => {
-      // Cleanup: Kill relevant ScrollTriggers and remove resize listener
+      lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      window.removeEventListener('resize', handleResize);
+      gsap.ticker.remove();
     };
   }, []);
+
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className='overflow-hidden'>
       <h1
         ref={(el) => (textRefs.current[0] = el)}
         className='text-xl md:text-3xl font-bold text-center my-12 max-w-7xl md:mx-auto mx-4'>
@@ -82,14 +111,16 @@ const Ceo = () => {
         build lasting, impactful connections between businesses and their
         audiences
       </h1>
-      <div className='flex flex-col md:flex-row justify-center gap-y-12 gap-x-12 md:gap-y-0 max-w-7xl md:mx-auto mx-4 '>
-        <div className='w-full md:w-5/12 '>
+      <div className='flex flex-col md:flex-row justify-center gap-y-12 gap-x-12 md:gap-y-0 max-w-7xl md:mx-auto mx-4'>
+        <div
+          ref={ceoContainerRef}
+          className='w-full md:w-5/12 relative h-[600px] overflow-hidden img-container'>
           <Image
             src={ceo}
             alt='ceo'
-            width={600}
-            height={600}
-            className='sticky top-20 z-10'
+            fill
+            priority
+            className='object-cover absolute top-0 left-0 -z-10'
           />
         </div>
         <div className='flex w-full md:w-5/12 flex-col gap-y-4 text-lg font-medium'>
@@ -119,7 +150,7 @@ const Ceo = () => {
           </span>
           <span className='font-bold' ref={(el) => (textRefs.current[4] = el)}>
             &quot;I wish you the best of luck with your business, enjoy the
-            adventure.”
+            adventure."
           </span>
           <span className='font-bold' ref={(el) => (textRefs.current[5] = el)}>
             Mr.Ayn Gajendran - CEO, Ayn Technologies
@@ -128,13 +159,15 @@ const Ceo = () => {
             <Image src={ceoSign} alt='ceo' width={200} height={200} />
           </span>
         </div>
-        <div className='w-full md:w-2/12 justify-end'>
+        <div
+          ref={officeContainerRef}
+          className='w-full md:w-2/12 relative h-[300px] overflow-hidden img-container'>
           <Image
             src={Aynoffice}
-            alt='ceo'
-            width={300}
-            height={300}
-            className='sticky top-20 z-10'
+            alt='office'
+            fill
+            priority
+            className='object-cover absolute top-0 left-0 -z-10'
           />
         </div>
       </div>

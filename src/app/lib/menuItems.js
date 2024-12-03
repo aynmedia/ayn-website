@@ -30,7 +30,7 @@ export const menuItems = [
         href: '/services/youtubemarketing',
       },
       {
-        name: 'Metamarketing',
+        name: 'Meta Marketing',
         href: '/services/metamarketing',
       },
       {
@@ -44,6 +44,22 @@ export const menuItems = [
       {
         name: 'Influencer Marketing',
         href: '/services/influencer',
+      },
+      {
+        name: 'Designs',
+        href: '/services/design',
+      },
+      {
+        name: 'Explainer Videos',
+        href: '/services/explainervideos',
+      },
+      {
+        name: 'Product Photography',
+        href: '/services/productphotography',
+      },
+      {
+        name: 'Corporate Videos',
+        href: '/services/corporatevideos',
       },
     ],
     gridCols: 3,

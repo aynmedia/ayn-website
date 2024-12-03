@@ -96,7 +96,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className='py-24 text-white bg-secondary '>
+    <section className='py-24 text-white bg-black '>
       <div className='mx-auto max-w-7xl px-4 flex flex-col md:flex-row items-center justify-start gap-5  pt-24'>
         <div className='flex flex-col w-full md:w-1/2 items-center'>
           <h1 ref={headingRef} className='text-6xl font-medium opacity-0'>

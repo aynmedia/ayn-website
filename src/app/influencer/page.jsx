@@ -107,8 +107,8 @@ const InfluencerMarketingPage = () => {
   }, []);
 
   return (
-    <div className='pb-12'>
-      <div ref={sectionRefs.hero} className='max-w-7xl md:mx-auto mx-4 my-12'>
+    <div className='pt-48'>
+      <div ref={sectionRefs.hero} className='max-w-7xl md:mx-auto mx-4'>
         <div className='flex flex-col md:flex-row items-center gap-4'>
           <h1 className='md:text-7xl text-4xl font-bold'>
             The Easiest Way to Reach a Larger Audience

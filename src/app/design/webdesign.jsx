@@ -4,19 +4,22 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { BsCheckCircle } from 'react-icons/bs';
-import { IoMegaphoneOutline } from 'react-icons/io5';
+import { PiGraphDuotone } from 'react-icons/pi';
 import { FaUncharted } from 'react-icons/fa';
-import { BsGlobe } from 'react-icons/bs';
-import { CiFacebook, CiInstagram, CiLinkedin, CiYoutube } from 'react-icons/ci';
+import { SiContentstack } from 'react-icons/si';
+import { MdOutlineDesignServices } from 'react-icons/md';
+import { PiSuitcaseSimpleDuotone } from 'react-icons/pi';
+import { CiShop } from 'react-icons/ci';
+import { GiMilkCarton } from 'react-icons/gi';
 import Image from 'next/image';
-import socialMedia from '@/../../public/images/services/socialmarketing.svg';
+import pc from '@/../../public/images/services/pc.svg';
 import social from '@/../../public/images/services/social.svg';
-import feature from '@/../../public/images/services/feature.svg';
+import design from '@/../../public/images/services/design.svg';
 import heroImage from '@/../../public/images/services/header.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SocialMediaPage = () => {
+const WebdesignPage = () => {
   const sectionRefs = useRef([]);
 
   useEffect(() => {
@@ -52,24 +55,13 @@ const SocialMediaPage = () => {
           className='flex flex-col md:flex-row items-center gap-4 '>
           <div className='flex gap-4'>
             <h1 className='md:text-7xl text-4xl font-bold'>
-              Give your brand a powerful voice
+              We Craft Memorable Experiences Through Our Designs
             </h1>
             <p className='text-md font-medium mt-4 max-w-4xl'>
-              Ayn Media – Delivering top-notch social media marketing to elevate
-              your brand’s impact.
+              Our Design Services We breathe life into your brand with our
+              comprehensive branding solutions.
             </p>
           </div>
-        </div>
-
-        <div
-          ref={(el) => sectionRefs.current.push(el)}
-          className='flex flex-col md:flex-row items-center gap-4 my-12'>
-          <p className='text-md font-medium'>
-            Over 3.5 billion people worldwide actively use social
-            media—that&apos;s an immense pool of potential clients waiting to be
-            reached. In today’s digital age, establishing a robust online
-            presence is essential.
-          </p>
         </div>
 
         <div className='bg-primary h-[400px] w-full overflow-hidden my-12'>
@@ -80,20 +72,23 @@ const SocialMediaPage = () => {
           ref={(el) => sectionRefs.current.push(el)}
           className='flex md:flex-row flex-col'>
           <div className='w-full md:w-1/2 flex flex-col gap-4'>
-            <h1 className='text-4xl font-bold'>Social Media Marketing</h1>
+            <h1 className='text-4xl font-bold'>
+              Web Design - Experience Your Brand
+            </h1>
             <p className='text-md font-medium'>
-              Over 3.5 billion people worldwide actively use social
-              media—that&apos;s an immense pool of potential clients waiting to
-              be reached. In today’s digital age, establishing a robust online
-              presence is essential.
+              Design is more than just aesthetics; it’s about communicating your
+              brand’s message and meeting its objectives. At Ayn Media, we focus
+              on creating designs that are not only visually captivating but
+              also communicate effectively, leaving a lasting impact on your
+              users.
             </p>
             <ul className='text-md font-medium flex flex-col gap-4'>
               {[
-                'Drives more traffic to your website or page',
-                'Enhances brand awareness',
+                'Converts prospects into loyal clients',
+                'Creates a memorable, lasting impression',
                 'Builds customer trust',
-                'Connects your brand with both loyal and new customers',
-                'Demonstrates authenticity and authority',
+                'Nurtures and engages your leads',
+                'Grabs attention in an instant',
               ].map((item, index) => (
                 <li key={index} className='flex gap-4 items-center'>
                   <BsCheckCircle size={24} className='text-primary' />
@@ -103,12 +98,7 @@ const SocialMediaPage = () => {
             </ul>
           </div>
           <div className='w-full md:w-1/2 flex flex-col gap-4 justify-center items-center'>
-            <Image
-              src={socialMedia}
-              alt='social-media'
-              width={500}
-              height={500}
-            />
+            <Image src={pc} alt='social-media' width={500} height={500} />
           </div>
         </div>
 
@@ -121,30 +111,29 @@ const SocialMediaPage = () => {
           <div className='w-full md:w-1/2 flex flex-col gap-4'>
             <h1 className='text-4xl font-bold'>Why Choose Ayn Media?</h1>
             <p className='text-md font-medium'>
-              From amplifying your brand’s voice to transforming loyal followers
-              into valuable leads, we handle every facet of social media
-              marketing. Our team of experts is dedicated to promoting your
-              brand and fostering a trusted, thriving community with strategic
-              calls-to-action.
+              From crafting user-centric, innovative designs to delivering
+              memorable brand experiences, we handle it all. At Ayn Media, our
+              mission is to develop dynamic, result-driven, and creative designs
+              that are both visually appealing and effective.
             </p>
             {[
               {
-                icon: <IoMegaphoneOutline size={64} />,
-                title: 'Brand Voice',
-                description:
-                  'We give your brand a distinct voice on social media that speaks, attracts, and connects with your audience.',
-              },
-              {
                 icon: <FaUncharted size={64} />,
-                title: 'Strategic Expertise',
+                title: 'Expert Strategy',
                 description:
-                  'Our team crafts a reliable, engaging strategy that strengthens brand communication through captivating content.',
+                  'We design with purpose, creating strategies that mirror your brand’s essence.',
               },
               {
-                icon: <BsGlobe size={64} />,
-                title: 'From Followers to Leads',
+                icon: <PiGraphDuotone size={64} />,
+                title: 'Unique Designs',
                 description:
-                  'We convert your loyal followers into prospective leads with compelling, action-oriented strategies.',
+                  'Every design is custom-tailored to set your brand apart from the competition.',
+              },
+              {
+                icon: <SiContentstack size={64} />,
+                title: 'Content Strategy',
+                description:
+                  'We provide strong content strategies to complement and enhance your design.',
               },
             ].map((item, index) => (
               <div
@@ -165,13 +154,13 @@ const SocialMediaPage = () => {
       <div className='bg-secondary py-24 w-full mt-12'>
         <div className='max-w-7xl md:mx-auto mx-4 flex flex-col items-center justify-center gap-6'>
           <h1 className='text-3xl font-bold text-white text-center'>
-            4 Major Platforms of Social Media Marketing
+            4 Key Design Services
           </h1>
           <p className='text-md font-medium text-white text-center'>
-            India’s social media user base is expanding every second—along with
-            your potential leads. Our team of social media experts crafts
-            tailored marketing campaigns designed to maximize your brand’s
-            impact across each platform.
+            At Ayn Media, we specialize in delivering high-end creative design
+            solutions tailored to meet the specific needs of your brand. Our
+            team of skilled professionals treats design as the online face of
+            your brand, ensuring it is both unique and user-friendly.
           </p>
         </div>
       </div>
@@ -181,28 +170,28 @@ const SocialMediaPage = () => {
         className='max-w-7xl md:mx-auto mx-4 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 my-12'>
         {[
           {
-            icon: <CiFacebook size={64} />,
-            name: 'FACEBOOK',
+            icon: <MdOutlineDesignServices size={64} />,
+            name: 'Logo Design',
             description:
-              'With over 2.23 billion monthly active users, this platform is perfect for reaching diverse age groups worldwide.',
+              'We create logos that reflect your brand’s identity and appeal to your target market.',
           },
           {
-            icon: <CiInstagram size={64} />,
-            name: 'INSTAGRAM',
+            icon: <PiSuitcaseSimpleDuotone size={64} />,
+            name: 'Corporate Design',
             description:
-              'With over 1 billion monthly users, this platform is ideal for connecting with today’s trends and engaging the youth.',
+              'From brochures to content optimization, we revamp corporate materials to make them more attractive and effective.',
           },
           {
-            icon: <CiLinkedin size={64} />,
-            name: 'LINKEDIN',
+            icon: <CiShop size={64} />,
+            name: 'Catalog Design',
             description:
-              'With over 294 million monthly active users, this platform is the go-to choice for B2B marketing.',
+              'We design product catalogs, brochures, and pamphlets with clear and compelling content to communicate your message.',
           },
           {
-            icon: <CiYoutube size={64} />,
-            name: 'YOUTUBE',
+            icon: <GiMilkCarton size={64} />,
+            name: 'Packaging Design',
             description:
-              'With over 1.9 billion monthly users, YouTube stands as one of the most widely viewed and utilized marketing platforms worldwide.',
+              'We develop customized packaging designs that leave a lasting impression on your products and customers.',
           },
         ].map((platform, index) => (
           <div
@@ -231,19 +220,19 @@ const SocialMediaPage = () => {
             <div className='md:w-1/4 w-full flex flex-col gap-12'>
               {[
                 {
-                  title: 'Facebook Marketing',
+                  title: 'Corporate Identity',
                   description:
-                    'From pages to advertisements, we integrate every aspect of Facebook into our campaigns to drive impactful results.',
+                    'We help you establish a strong corporate identity seamlessly, ensuring consistency across all touchpoints.',
                 },
                 {
-                  title: 'Instagram Marketing',
+                  title: 'Logo Design',
                   description:
-                    'We cover it all—feeds, reels, IGTV, stories, and more—to ensure your brand shines on Instagram.',
+                    'Our logo design process bridges your brand’s mission with the needs of your audience, creating a lasting visual identity.',
                 },
                 {
-                  title: 'LinkedIn Marketing',
+                  title: 'Brochure Design',
                   description:
-                    'From content sharing and networking to advertising, we handle every aspect of LinkedIn marketing.',
+                    'We design brochures that define your communication strategy, aligning it perfectly with your brand’s voice and design expectations.',
                 },
               ].map((feature, index) => (
                 <div
@@ -255,24 +244,24 @@ const SocialMediaPage = () => {
               ))}
             </div>
             <div className='md:w-2/4 w-full'>
-              <Image src={feature} alt='social' width={1000} height={1000} />
+              <Image src={design} alt='social' width={1000} height={1000} />
             </div>
             <div className='md:w-1/4 w-full flex flex-col gap-12'>
               {[
                 {
-                  title: 'YouTube Marketing',
+                  title: 'Catalog Design',
                   description:
-                    'We craft engaging, viral video content that resonates with your audience.',
+                    'Whether it’s a product catalog or service guide, we captivate your customers with effective and engaging catalog designs.',
                 },
                 {
-                  title: 'Social Media Optimization (SMO)',
+                  title: 'Package Design',
                   description:
-                    'We create SMO strategies to boost brand awareness and strengthen connections with customers.',
+                    'Our package designs position your product in the minds of consumers, enhancing brand recall and product appeal.',
                 },
                 {
-                  title: 'Online Reputation Management',
+                  title: 'Poster Design',
                   description:
-                    'We help monitor and enhance your brand’s online presence to drive better results.',
+                    'We create compelling posters that impress your audience through creative design and powerful communication.',
                 },
               ].map((feature, index) => (
                 <div
@@ -290,4 +279,4 @@ const SocialMediaPage = () => {
   );
 };
 
-export default SocialMediaPage;
+export default WebdesignPage;
