@@ -10,56 +10,76 @@ export const menuItems = [
     href: '',
     subMenu: [
       {
-        name: 'Social Media Marketing',
-        href: '/services/socialmedia',
+        category: 'Digital Marketing',
+        items: [
+          {
+            name: 'Social Media Marketing',
+            href: '/services/socialmedia',
+          },
+          {
+            name: 'Facebook Marketing',
+            href: '/services/facebookmarketing',
+          },
+          {
+            name: 'LinkedIn Marketing',
+            href: '/services/linkedin',
+          },
+          {
+            name: 'SEO',
+            href: '/services/seo',
+          },
+          {
+            name: 'YouTube Marketing',
+            href: '/services/youtubemarketing',
+          },
+          {
+            name: 'Influencer Marketing',
+            href: '/services/influencer',
+          },
+          {
+            name: 'Content Marketing',
+            href: '/services/contentmarketing',
+          },
+        ],
       },
       {
-        name: 'Content Marketing',
-        href: '/services/contentmarketing',
+        category: 'Performance Marketing',
+        items: [
+          {
+            name: 'Meta ads',
+            href: '/services/metamarketing',
+          },
+          {
+            name: 'Google Ads',
+            href: '/services/googleads',
+          },
+          {
+            name: 'LinkedIn',
+            href: '/services/linkedin',
+          },
+          {
+            name: 'Graphics Designs',
+            href: '/services/design',
+          },
+        ],
       },
+
       {
-        name: 'Google Ads',
-        href: '/services/googleads',
-      },
-      {
-        name: 'Facebook Marketing',
-        href: '/services/facebookmarketing',
-      },
-      {
-        name: 'YouTube Marketing',
-        href: '/services/youtubemarketing',
-      },
-      {
-        name: 'Meta Marketing',
-        href: '/services/metamarketing',
-      },
-      {
-        name: 'SEO',
-        href: '/services/seo',
-      },
-      {
-        name: 'LinkedIn Marketing',
-        href: '/services/linkedin',
-      },
-      {
-        name: 'Influencer Marketing',
-        href: '/services/influencer',
-      },
-      {
-        name: 'Designs',
-        href: '/services/design',
-      },
-      {
-        name: 'Explainer Videos',
-        href: '/services/explainervideos',
-      },
-      {
-        name: 'Product Photography',
-        href: '/services/productphotography',
-      },
-      {
-        name: 'Corporate Videos',
-        href: '/services/corporatevideos',
+        category: 'Video Production & Photography',
+        items: [
+          {
+            name: 'Explainer Videos',
+            href: '/services/explainervideos',
+          },
+          {
+            name: 'Product Photography',
+            href: '/services/productphotography',
+          },
+          {
+            name: 'Corporate Videos',
+            href: '/services/corporatevideos',
+          },
+        ],
       },
     ],
     gridCols: 3,

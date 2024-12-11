@@ -15,7 +15,7 @@ import heroImage from '@/../../public/images/Ayn_Media.webp';
 export default function Home() {
   return (
     <div>
-      <div>
+      <div className='md:pt-0 pt-24'>
         <Image src={heroImage} alt='hero' width={2100} height={1000} />
       </div>
       <Hero />

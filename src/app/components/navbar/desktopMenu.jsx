@@ -1,7 +1,8 @@
 /** @format */
+
 'use client';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 
 const DesktopMenu = ({ menu }) => {
@@ -16,7 +17,7 @@ const DesktopMenu = ({ menu }) => {
   return (
     <li>
       <span
-        className='flex items-center gap-1 cursor-pointer px-3 py-1 rounded-xl group font-bold  text-black/80 text-md'
+        className='flex items-center gap-1 cursor-pointer px-3 py-1 rounded-xl group font-bold text-black/80 text-md'
         onMouseEnter={toggleHoverMenu}
         onMouseLeave={toggleHoverMenu}>
         <Link href={menu.href} className='hover:text-white'>
@@ -31,25 +32,38 @@ const DesktopMenu = ({ menu }) => {
         {hasSubMenu && isHover && (
           <div className='sub-menu cursor-pointer z-10 text-md font-medium shadow-xl'>
             <div className='flex justify-center gap-x-4'>
-              <div className='bg-white/70 w-fit p-2 rounded-md '>
-                <div
-                  className={`
-              grid gap-7 ${
-                menu.gridCols === 3
-                  ? 'grid-cols-3'
-                  : menu.gridCols === 2
-                  ? 'grid-cols-2'
-                  : 'grid-cols-1'
-              }
-              `}>
-                  {menu.subMenu.map((item, index) => (
-                    <div key={index} className='cursor-pointer text-md'>
-                      <Link href={item.href} className='hover:text-primary'>
-                        {item.name}
-                      </Link>
+              <div className='bg-white/70 w-fit p-2 rounded-md'>
+                {menu.subMenu.map((submenuCategory, categoryIndex) => (
+                  <div
+                    key={categoryIndex}
+                    className={`
+                      ${categoryIndex < menu.subMenu.length - 1 ? 'mb-2' : ''}
+                    `}>
+                    {submenuCategory.category && (
+                      <h3 className='font-semibold text-black/80 mb-2'>
+                        {submenuCategory.category}
+                      </h3>
+                    )}
+                    <div
+                      className={`
+                        grid gap-4 ${
+                          menu.gridCols === 3
+                            ? 'grid-cols-3'
+                            : menu.gridCols === 2
+                            ? 'grid-cols-2'
+                            : 'grid-cols-1'
+                        }
+                      `}>
+                      {submenuCategory.items?.map((item, index) => (
+                        <div key={index} className='cursor-pointer text-md'>
+                          <Link href={item.href} className='hover:text-primary'>
+                            {item.name}
+                          </Link>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
