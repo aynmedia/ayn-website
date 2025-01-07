@@ -12,7 +12,7 @@ import image2 from '@/../../public/images/about/image2.jpg';
 import image3 from '@/../../public/images/about/image3.jpg';
 import image4 from '@/../../public/images/about/image4.jpg';
 import aboutheader from '@/../../public/images/about/abouthead.jpg';
-import LogoSlider from '../components/logoslider';
+import LogoSlider from '../../components/logoslider';
 
 gsap.registerPlugin(ScrollTrigger);
 

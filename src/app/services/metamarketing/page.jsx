@@ -14,7 +14,7 @@ import Image from 'next/image';
 import socialMedia from '@/../../public/images/services/socialmarketing.svg';
 import fbinsta from '@/../../public/images/services/fbinsta.svg';
 import heroImage from '@/../../public/images/services/header.jpg';
-import Rotate from '../components/animations/rotateAnimation';
+import Rotate from '../../components/animations/rotateAnimation';
 const page = () => {
   return (
     <div className='pt-48'>

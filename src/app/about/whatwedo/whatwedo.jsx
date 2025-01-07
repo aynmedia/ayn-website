@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import LogoSlider from '../components/logoslider';
+import LogoSlider from '../../components/logoslider';
 import howwe from '@/../../public/images/about/howwe.jpg';
 import planb from '@/../../public/images/about/planb.jpg';
 gsap.registerPlugin(ScrollTrigger);

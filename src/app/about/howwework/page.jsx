@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import LogoSlider from '../components/logoslider';
+import LogoSlider from '../../components/logoslider';
 
 // Import images
 import howheader from '@/../../public/images/about/howheader.jpg';

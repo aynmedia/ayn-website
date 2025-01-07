@@ -89,20 +89,25 @@ export const menuItems = [
     href: '',
     subMenu: [
       {
-        name: 'Who We Are',
-        href: '/about/whoweare',
-      },
-      {
-        name: 'What We Do',
-        href: '/about/whatwedo',
-      },
-      {
-        name: 'How We Work',
-        href: '/about/howwework',
-      },
-      {
-        name: 'Our Leadership',
-        href: '/about/ourleadership',
+        category: 'Company',
+        items: [
+          {
+            name: 'Who We Are',
+            href: '/about/whoweare',
+          },
+          {
+            name: 'What We Do',
+            href: '/about/whatwedo',
+          },
+          {
+            name: 'How We Work',
+            href: '/about/howwework',
+          },
+          {
+            name: 'Our Leadership',
+            href: '/about/ourleadership',
+          },
+        ],
       },
     ],
   },
