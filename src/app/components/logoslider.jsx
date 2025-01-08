@@ -6,7 +6,7 @@ import { logoImages } from '../lib/logos';
 import { FaArrowRightLong } from 'react-icons/fa6';
 
 import Marquee from 'react-fast-marquee';
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 
 const LogoSlider = () => {
   return (

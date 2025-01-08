@@ -4,7 +4,7 @@ module.exports = {
   output: 'export',
   assetPrefix: '',
   reactStrictMode: true,
-  swcMinify: true,
+  // swcMinify: true,
   images: {
     unoptimized: true,
   },

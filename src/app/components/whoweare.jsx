@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import who from '@/../public/images/Who_we_are_BG.png';
+import who from '@/../../public/images/Who_we_are_BG.png';
 import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
 import BounceAnimation from './animations/bounceAnimation';

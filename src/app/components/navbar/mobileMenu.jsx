@@ -1,6 +1,6 @@
 /** @format */
 'use client';
-import { menuItems } from '@/app/lib/menuItems';
+// import { menuItems } from '@/app/lib/menuItems';
 import React, { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { RxHamburgerMenu } from 'react-icons/rx';
