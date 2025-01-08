@@ -33,6 +33,7 @@ jobs:
           npm run build
           # npm run export  # This generates static files in the 'out' directory
 
+<<<<<<< HEAD
       - name: Upload Static Files to Hosting via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
@@ -41,3 +42,13 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/ # This is the directory where your static files are generated
           remote-dir: /public_html # The directory on your shared hosting server
+=======
+    - name: Upload Static Files to Hosting via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: 82.112.232.1
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./out/  # This is the directory where your static files are generated
+        remote-dir: /public_html  # The directory on your shared hosting server
+>>>>>>> 9bfcb7c2c2e1bc8e2a8ac7ebaa0088cf44e4c738
