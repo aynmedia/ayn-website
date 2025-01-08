@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import blogbg from '@/../public/images/blogs.jpg';
+import blogbg from '@/../public/images/blogsbg.svg';
 import { stripHtml } from 'string-strip-html';
 
 async function getPosts(page = 1) {
